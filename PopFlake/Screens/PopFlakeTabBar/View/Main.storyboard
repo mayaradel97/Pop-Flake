@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="red-A5-wfI">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Pop Flake Tab Bar Controller-->
+        <scene sceneID="yV4-Ao-OIb">
+            <objects>
+                <tabBarController id="red-A5-wfI" customClass="PopFlakeTabBarController" customModule="PopFlake" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="a6h-Rf-B9p">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="DBw-aM-T0m" kind="relationship" relationship="viewControllers" id="V4X-4Z-Wam"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fi1-RQ-9C8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-531" y="39"/>
+        </scene>
+        <!--HomeTableViewController-->
+        <scene sceneID="vyK-57-zme">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="HomeTableViewController" storyboardName="HomeStoryboard" referencedIdentifier="HomeTableViewController" id="DBw-aM-T0m" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="Fqz-iF-l4k"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ouh-ya-ox0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="68" y="347"/>
+        </scene>
+    </scenes>
+</document>
