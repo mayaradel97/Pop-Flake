@@ -9,7 +9,7 @@ import UIKit
 
 class HeaderCollectionViewCell: UICollectionViewCell,HeaderCellView,ImageDataDelegate
 {
-    
+   
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var posterImageView: UIImageView!
@@ -26,8 +26,8 @@ class HeaderCollectionViewCell: UICollectionViewCell,HeaderCellView,ImageDataDel
         guard let imageVideoData = self.getImageData(with: itemTrailor.thumbnailUrl)
         else{return}
         videoImageView.image = UIImage(data: imageVideoData)
-      //  guard let imagePosterData = self.getImageData(with: itemTrailor.posterImage!)
-     //   else{return}
-     //   posterImageView.image = UIImage(data: imagePosterData)
+        guard let imagePosterData = self.getImageData(with: itemTrailor.posterImage!)
+        else{return}
+        posterImageView.image = UIImage(data: imagePosterData)
     }
 }

@@ -14,7 +14,7 @@ extension HomeTableViewController
         
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        let headerCollectionView = UICollectionView(frame:  CGRect(x: 0, y: 0, width: self.view.frame.width, height: 300 ), collectionViewLayout: layout)
+         headerCollectionView = UICollectionView(frame:  CGRect(x: 0, y: 0, width: self.view.frame.width, height: 300 ), collectionViewLayout: layout)
         headerCollectionView.isPagingEnabled = true
         headerCollectionView.isUserInteractionEnabled = true
         headerCollectionView.dataSource = self
@@ -27,8 +27,13 @@ extension HomeTableViewController
     
 }
 //MARK: - UICollectionViewDataSource
-extension HomeTableViewController: UICollectionViewDataSource
+extension HomeTableViewController: UICollectionViewDataSource,HeaderMovement
 {
+    func moveToNextCell(index: Int)
+    {
+        headerCollectionView.scrollToItem(at: IndexPath(row: index, section: 0), at: .centeredHorizontally, animated: true)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
         return homeViewModel.itemsTrailors.count
@@ -38,9 +43,8 @@ extension HomeTableViewController: UICollectionViewDataSource
     {
         
         let headerCell = collectionView.dequeueReusableCell(withReuseIdentifier: cell, for: indexPath) as! HeaderCollectionViewCell
-//        headerCell.posterImageView.image = #imageLiteral(resourceName: "img2")
-//        headerCell.videoImageView.image = #imageLiteral(resourceName: "img2")
         homeViewModel.configureHeaderCell(cell: headerCell, indexPath: indexPath)
+        homeViewModel.configureHeaderMovement(cell: self)
         return headerCell
     }
 }

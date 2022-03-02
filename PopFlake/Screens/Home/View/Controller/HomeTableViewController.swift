@@ -11,6 +11,7 @@ class HomeTableViewController: UITableViewController
 {
    var homeViewModel: HomeViewModel!
     let cell = String(describing: HeaderCollectionViewCell.self)
+    var headerCollectionView: UICollectionView!
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -30,6 +31,7 @@ class HomeTableViewController: UITableViewController
                 DispatchQueue.main.async
                 {
                     self.tableView.reloadData()
+                    self.headerCollectionView.reloadData()
                 }
             }
     }

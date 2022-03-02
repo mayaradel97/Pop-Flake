@@ -126,8 +126,8 @@
             filePath = "PopFlake/Screens/Home/View Model/HomeViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
+            startingLineNumber = "154"
+            endingLineNumber = "154"
             landmarkName = "getTopRatedItems()"
             landmarkType = "7">
          </BreakpointContent>
@@ -142,8 +142,8 @@
             filePath = "PopFlake/Screens/Home/View Model/HomeViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "148"
-            endingLineNumber = "148"
+            startingLineNumber = "183"
+            endingLineNumber = "183"
             landmarkName = "configureCell(cell:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -158,8 +158,8 @@
             filePath = "PopFlake/Screens/Home/View Model/HomeViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "156"
-            endingLineNumber = "156"
+            startingLineNumber = "191"
+            endingLineNumber = "191"
             landmarkName = "configureCell(cell:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -194,98 +194,166 @@
             endingLineNumber = "13"
             landmarkName = "HeaderCollectionView"
             landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "D06AFA75-E63C-4002-AD15-FBEE41D38573 - 2140c4adf1814ce4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PopFlake.HeaderCollectionView.headerCollectionView.getter : Swift.Optional&lt;__C.UICollectionView&gt;"
-                  moduleName = "PopFlake"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mayaradel/Desktop/PopFlake/PopFlake/Screens/Home/View/Header/HeaderCollectionView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "13"
-                  endingLineNumber = "13"
-                  offsetFromSymbolStart = "88">
-               </Location>
-               <Location
-                  uuid = "D06AFA75-E63C-4002-AD15-FBEE41D38573 - 2dc68e2b8975acfc"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PopFlake.HeaderCollectionView.headerCollectionView.setter : Swift.Optional&lt;__C.UICollectionView&gt;"
-                  moduleName = "PopFlake"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mayaradel/Desktop/PopFlake/PopFlake/Screens/Home/View/Header/HeaderCollectionView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "13"
-                  endingLineNumber = "13"
-                  offsetFromSymbolStart = "155">
-               </Location>
-               <Location
-                  uuid = "D06AFA75-E63C-4002-AD15-FBEE41D38573 - 6d144a5cba285ab1"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PopFlake.HeaderCollectionView.headerCollectionView.modify : Swift.Optional&lt;__C.UICollectionView&gt;"
-                  moduleName = "PopFlake"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mayaradel/Desktop/PopFlake/PopFlake/Screens/Home/View/Header/HeaderCollectionView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "59">
-               </Location>
-               <Location
-                  uuid = "D06AFA75-E63C-4002-AD15-FBEE41D38573 - f60fb5a3b08a2c00"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PopFlake.HeaderCollectionView.headerCollectionView.modify : Swift.Optional&lt;__C.UICollectionView&gt; with unmangled suffix &quot;.resume.0&quot;"
-                  moduleName = "PopFlake"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mayaradel/Desktop/PopFlake/PopFlake/Screens/Home/View/Header/HeaderCollectionView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "13"
-                  endingLineNumber = "13"
-                  offsetFromSymbolStart = "64">
-               </Location>
-               <Location
-                  uuid = "D06AFA75-E63C-4002-AD15-FBEE41D38573 - c6917c6d7a8be26a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PopFlake.HeaderCollectionView.init(reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; PopFlake.HeaderCollectionView"
-                  moduleName = "PopFlake"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mayaradel/Desktop/PopFlake/PopFlake/Screens/Home/View/Header/HeaderCollectionView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "13"
-                  endingLineNumber = "13"
-                  offsetFromSymbolStart = "122">
-               </Location>
-               <Location
-                  uuid = "D06AFA75-E63C-4002-AD15-FBEE41D38573 - 3865db32a5c1ee1c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PopFlake.HeaderCollectionView.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;PopFlake.HeaderCollectionView&gt;"
-                  moduleName = "PopFlake"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mayaradel/Desktop/PopFlake/PopFlake/Screens/Home/View/Header/HeaderCollectionView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "13"
-                  endingLineNumber = "13"
-                  offsetFromSymbolStart = "119">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "92E06A91-CF4A-4DDC-9AD1-56753CD51EEE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PopFlake/Screens/Home/View/Header/Cell/HeaderCollectionViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "configure(itemTrailor:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "69668801-E748-43DD-BBDD-0D097134EC0E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PopFlake/Screens/Home/View Model/HomeViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "getMoviesTrailors()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DFE74EF1-DEB7-4946-8161-7CEE028C373B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PopFlake/Screens/Home/View Model/HomeViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "getMoviesTrailors()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F437A494-0382-42E1-BC1D-4A51BA6B18DA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PopFlake/Extensions/HomeTableViewController+Header.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "collectionView(_:cellForItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BB214CF9-8563-46A9-BBA1-D13E0C2119CE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PopFlake/Extensions/HomeTableViewController+Header.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "collectionView(_:cellForItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9EF5FB32-F3BB-4C4A-89ED-0DD95725ED4C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PopFlake/Screens/Home/View Model/HomeViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
+            landmarkName = "HomeViewModel"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2C76B551-C2AD-44D5-A345-87B91F0743A0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PopFlake/Screens/Home/View Model/HomeViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "startTimer()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B01E9ACE-78F4-43FE-A7B6-BE6D0A6231E0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PopFlake/Screens/Home/View Model/HomeViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "moveToNextIndex()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8F8CC84E-27AA-49E2-8EA3-40A162AA2B43"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PopFlake/Screens/Home/View Model/HomeViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "moveToNextIndex()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D8F85F2D-BB72-4F45-A848-00A8344FF1C3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PopFlake/Screens/Home/View Model/HomeViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "moveToNextIndex()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -12,5 +12,5 @@ struct Trailor: Codable
     let thumbnailUrl: String
     let link: String
     let videoTitle: String
-    let posterImage: String?
+    var posterImage: String?
 }
