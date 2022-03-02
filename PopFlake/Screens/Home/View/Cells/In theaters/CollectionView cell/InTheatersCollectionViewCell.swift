@@ -7,7 +7,7 @@
 
 import UIKit
 
-class InTheatersCollectionViewCell: UICollectionViewCell,ItemCollectionViewCell
+class InTheatersCollectionViewCell: UICollectionViewCell,ItemCollectionViewCell,ImageDataDelegate
 {
    
 

@@ -13,6 +13,7 @@ class HomeViewModel
     var inTheatersItems: [Item]
     var topRatedItems: [Item]
     var topGrossingItems: [Item]
+    var itemsTrailors: [Trailor]
     var networkLayer: NetworkLayer!
     var bindProductsToView: (()->())!
     
@@ -22,6 +23,7 @@ class HomeViewModel
         inTheatersItems = []
         topRatedItems = []
         topGrossingItems = []
+        itemsTrailors = []
         networkLayer = NetworkLayer()
         headers =
         [
@@ -30,11 +32,45 @@ class HomeViewModel
             Header(title: "Top Rated Movies"),
             Header(title: "Top box Office"),
         ]
-        self.getComingSoonItems()
+       
+//        self.getComingSoonItems()
         self.getInTheatersItems()
-        self.getTopRatedItems()
-       self.getTopGrossingItems()
+//        self.getTopRatedItems()
+//       self.getTopGrossingItems()
+        self.getInTheatersItems()
     }
+    //MARK: - Header
+    func getRandomItem(items: [Item]) ->Item?
+    {
+        guard let item = items.randomElement()
+        else
+        {
+            return nil
+        }
+       return item
+    }
+    func getMoviesTrailors()
+    {
+        guard let item = getRandomItem(items: inTheatersItems)
+       else {return}
+        API.id = item.id
+        networkLayer.getResponse(of: [Trailor].self, url: API.trailorMovies)
+        { [weak self](items) in
+            guard let self = self else {return}
+            if let items = items
+            {
+               
+                self.itemsTrailors = items
+                self.bindProductsToView()
+            }
+            else
+            {
+                //bind failure
+            }
+            
+        }
+    }
+    //MARK: - data
     func getComingSoonItems()
     {
         networkLayer.getResponse(of: Items.self, url: API.comingSoonURL)
@@ -68,6 +104,10 @@ class HomeViewModel
             }
             
         }
+    }
+    func configureHeaderCell(cell: HeaderCellView,indexPath: IndexPath)
+    {
+        cell.configure(itemTrailor: itemsTrailors[indexPath.row])
     }
     func getTopRatedItems()
     {
