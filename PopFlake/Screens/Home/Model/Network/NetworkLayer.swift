@@ -22,6 +22,7 @@ class NetworkLayer
             let decoder = JSONDecoder()
             let results = try! decoder.decode(T.self, from: data!)
             completion(results)
+            print(results)
         }
         task.resume()
         

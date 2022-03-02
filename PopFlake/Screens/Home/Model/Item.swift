@@ -11,7 +11,10 @@ struct Item: Codable
     let id: String
     let title: String
     let image: String
-    let year: String
+    let year: String?
+    let imDbRating: String?
+    let weekend: String?
+    let rank: String?
 }
 struct Items: Codable
 {

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ComingSoonCollectionViewCell: UICollectionViewCell, ItemCellView
+class ComingSoonCollectionViewCell: UICollectionViewCell,ItemCollectionViewCell
 {
     @IBOutlet weak var itemYear: UILabel!
     @IBOutlet weak var itemTitle: UILabel!
@@ -31,19 +31,5 @@ class ComingSoonCollectionViewCell: UICollectionViewCell, ItemCellView
         itemImage.image = UIImage(data: imageData)
         itemImage.contentMode = .scaleAspectFit
     }
-    func getImageData(with url: String)-> Data?
-    {
-        let url = URL(string: url)
-        guard let imageURL = url
-        else
-        {
-            return nil
-        }
-       guard let imageData = try? Data(contentsOf: imageURL)
-        else
-       {
-        return nil
-       }
-        return imageData
-    }
+
 }

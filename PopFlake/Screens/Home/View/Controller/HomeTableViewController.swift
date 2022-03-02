@@ -71,20 +71,23 @@ class HomeTableViewController: UITableViewController
         {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCellConstant.ComingSoonTableViewCell.rawValue, for: indexPath) as! ComingSoonTableViewCell
-           // homeViewModel.configureCell(cell: cell, indexPath: indexPath)
+            homeViewModel.configureCell(cell: cell)
            // cell.setUpCell()
-            print("i\(homeViewModel.items.count)")
-            cell.items = homeViewModel.items
-            cell.setUpCell()
+          //  print("i\(homeViewModel.items.count)")
+          //  cell.items = homeViewModel.items
+//cell.setUpCell()
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCellConstant.InTheatersTableViewCell.rawValue, for: indexPath) as! InTheatersTableViewCell
+            homeViewModel.configureCell(cell: cell)
             return cell
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCellConstant.TopRatedTableViewCell.rawValue, for: indexPath) as! TopRatedTableViewCell
+            homeViewModel.configureCell(cell: cell)
             return cell
         case 3:
             let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCellConstant.TopGossingMoviesTableViewCell.rawValue, for: indexPath) as! TopGossingMoviesTableViewCell
+            homeViewModel.configureCell(cell: cell)
             return cell
 
         default:

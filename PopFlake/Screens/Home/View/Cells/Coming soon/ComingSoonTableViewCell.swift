@@ -7,8 +7,14 @@
 
 import UIKit
 
-class ComingSoonTableViewCell: UITableViewCell
+class ComingSoonTableViewCell: UITableViewCell,ItemTableViewCell
 {
+    func configure(items: [Item])
+    {
+        self.items = items
+        comingSoonCollectionView.reloadData()
+    }
+    
 
     @IBOutlet weak var comingSoonCollectionView: UICollectionView!
     let cell = String(describing: ComingSoonCollectionViewCell.self)
@@ -16,16 +22,16 @@ class ComingSoonTableViewCell: UITableViewCell
     override func awakeFromNib()
     {
         super.awakeFromNib()
-       // self.setUpCell()
-        comingSoonCollectionView.register(UINib(nibName: cell, bundle: nil), forCellWithReuseIdentifier: cell)
-        comingSoonCollectionView.delegate = self
-        comingSoonCollectionView.dataSource = self
+      //  self.setUpCell()
+       
         
        
     }
     func setUpCell()
     {
-        comingSoonCollectionView.reloadData()
+        comingSoonCollectionView.register(UINib(nibName: cell, bundle: nil), forCellWithReuseIdentifier: cell)
+        comingSoonCollectionView.delegate = self
+        comingSoonCollectionView.dataSource = self
     }
 
     override func setSelected(_ selected: Bool, animated: Bool)
@@ -34,21 +40,23 @@ class ComingSoonTableViewCell: UITableViewCell
 
         // Configure the view for the selected state
     }
+    func configureCell(cell: ItemCollectionViewCell,indexPath: IndexPath)
+    {
+        cell.configure(item: items[indexPath.row])
+    }
     
 }
 extension ComingSoonTableViewCell: UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout
 {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
-        print(items.count)
         return items.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
         let comingSoonCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: cell, for: indexPath) as! ComingSoonCollectionViewCell
-        comingSoonCollectionViewCell.configure(item: items[indexPath.row])
-        print(items)
+        self.configureCell(cell: comingSoonCollectionViewCell, indexPath: indexPath)
         return comingSoonCollectionViewCell
         
     }
