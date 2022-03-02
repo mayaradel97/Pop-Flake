@@ -7,23 +7,29 @@
 
 import UIKit
 
-class PopFlakeTabBarController: UITabBarController {
-
-    override func viewDidLoad() {
+class PopFlakeTabBarController: UITabBarController
+{
+   private var popFlakeTabBarViewModel: PopFlakeTabBarViewModel!
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
+        popFlakeTabBarViewModel = PopFlakeTabBarViewModel()
+        self.bindNetworkState()
 
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func bindNetworkState()
+    {
+        popFlakeTabBarViewModel.bindNetworkStateToView =
+            {
+                [weak self] in
+                guard let self = self else {return}
+                DispatchQueue.main.async
+                {
+                self.showAlert(with: "No Internt Connection")
+                }
+                
+            }
     }
-    */
-
+    
 }
