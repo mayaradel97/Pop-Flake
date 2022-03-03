@@ -16,6 +16,10 @@ class HomeViewModel
     var itemsTrailors: [Trailor]
     var networkLayer: NetworkLayer!
     var bindItemsToView: (()->())!
+    var bindShowLoadingIndicatorToView: (()->())!
+    var bindHideLoadingIndicatorToView: (()->())!
+    var bindFailureToView: (()->())!
+    
     var timer: Timer?
     var currentHeaderIndex = 0
     
@@ -69,6 +73,7 @@ class HomeViewModel
             else
             {
                 //bind failure
+                self.bindFailureToView()
             }
             
         }
@@ -99,17 +104,23 @@ class HomeViewModel
     //MARK: - data
     func getComingSoonItems()
     {
+        
         networkLayer.getResponse(of: Items.self, url: API.comingSoonURL)
         { [weak self](items) in
             guard let self = self else {return}
             if let items = items
             {
-                self.comingSonnItems = items.items
+                if items.items.count == 0
+                {
+                    self.bindFailureToView()
+                    return
+                }
+                self.comingSonnItems += items.items
                 self.bindItemsToView()
             }
             else
             {
-                //bind failure
+                self.bindFailureToView()
             }
             
         }
@@ -128,7 +139,7 @@ class HomeViewModel
             guard let self = self else {return}
             if let items = items
             {
-                self.inTheatersItems = items.items
+                self.inTheatersItems += items.items
                 self.bindItemsToView()
                 self.getAllTrailors()
                
@@ -136,6 +147,7 @@ class HomeViewModel
             else
             {
                 //bind failure
+                self.bindFailureToView()
             }
             
         }
@@ -148,12 +160,13 @@ class HomeViewModel
             guard let self = self else {return}
             if let items = items
             {
-                self.topRatedItems = items.items
+                self.topRatedItems += items.items
                 self.bindItemsToView()
             }
             else
             {
                 //bind failure
+                self.bindFailureToView()
             }
             
         }
@@ -165,12 +178,13 @@ class HomeViewModel
             guard let self = self else {return}
             if let items = items
             {
-                self.topGrossingItems = items.items
+                self.topGrossingItems += items.items
                 self.bindItemsToView()
             }
             else
             {
                 //bind failure
+                self.bindFailureToView()
             }
             
         }
@@ -181,13 +195,13 @@ class HomeViewModel
         switch cell
         {
         case is ComingSoonTableViewCell:
-            cell.configure(items: comingSonnItems)
+            cell.configure(items: comingSonnItems, homeViewModel: self)
         case is InTheatersTableViewCell:
-            cell.configure(items: inTheatersItems)
+            cell.configure(items: inTheatersItems, homeViewModel: self)
         case is TopRatedTableViewCell:
-            cell.configure(items: topRatedItems)
+            cell.configure(items: topRatedItems,homeViewModel: self)
         case is TopGossingMoviesTableViewCell:
-            cell.configure(items: topGrossingItems)
+            cell.configure(items: topGrossingItems,homeViewModel: self)
         default:
             print("other")
         }

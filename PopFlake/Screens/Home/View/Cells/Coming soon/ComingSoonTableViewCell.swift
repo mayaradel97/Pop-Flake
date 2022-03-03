@@ -9,23 +9,13 @@ import UIKit
 
 class ComingSoonTableViewCell: UITableViewCell,ItemTableViewCell,IDetailsView
 {
-    func configure(items: [Item])
-    {
-        self.items = items
-        comingSoonCollectionView.reloadData()
-    }
-    
-
     @IBOutlet weak var comingSoonCollectionView: UICollectionView!
     let cell = String(describing: ComingSoonCollectionViewCell.self)
     var items: [Item] = []
+    var homeViewModel: HomeViewModel!
     override func awakeFromNib()
     {
         super.awakeFromNib()
-      //  self.setUpCell()
-       
-  
-       
     }
     func setUpCell()
     {
@@ -33,12 +23,17 @@ class ComingSoonTableViewCell: UITableViewCell,ItemTableViewCell,IDetailsView
         comingSoonCollectionView.delegate = self
         comingSoonCollectionView.dataSource = self
     }
+    func configure(items: [Item],homeViewModel: HomeViewModel)
+    {
+        self.items = items
+        self.homeViewModel = homeViewModel
+        comingSoonCollectionView.reloadData()
+    }
+    
 
     override func setSelected(_ selected: Bool, animated: Bool)
     {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     func configureCell(cell: ItemCollectionViewCell,indexPath: IndexPath)
     {
@@ -75,5 +70,12 @@ extension ComingSoonTableViewCell: UICollectionViewDelegate,UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat
     {
         30
+    }
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath)
+    {
+        if indexPath.row == items.count - 1
+        {
+            homeViewModel.getComingSoonItems()
+        }
     }
 }

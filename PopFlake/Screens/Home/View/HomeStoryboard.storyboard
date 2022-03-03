@@ -3,29 +3,52 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Home-->
-        <scene sceneID="WXA-2Q-EWF">
+        <scene sceneID="geE-D5-ql8">
             <objects>
-                <tableViewController storyboardIdentifier="HomeTableViewController" id="Hwe-0i-Jr0" customClass="HomeTableViewController" customModule="PopFlake" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Bp3-1Q-u05">
+                <viewController storyboardIdentifier="HomeViewController" id="8Q9-IM-l5d" customClass="HomeViewController" customModule="PopFlake" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3qH-OO-eDZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6yu-nZ-jxx">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="8Q9-IM-l5d" id="LQ7-ky-mps"/>
+                                    <outlet property="delegate" destination="8Q9-IM-l5d" id="wHN-sx-Hoy"/>
+                                </connections>
+                            </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="WI7-fg-HNS">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="OUM-Ia-3BD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <connections>
-                            <outlet property="dataSource" destination="Hwe-0i-Jr0" id="c1J-HO-GsG"/>
-                            <outlet property="delegate" destination="Hwe-0i-Jr0" id="bIl-0g-1S4"/>
-                        </connections>
-                    </tableView>
+                        <constraints>
+                            <constraint firstItem="WI7-fg-HNS" firstAttribute="centerX" secondItem="3qH-OO-eDZ" secondAttribute="centerX" id="9Hj-UI-rhN"/>
+                            <constraint firstItem="6yu-nZ-jxx" firstAttribute="leading" secondItem="3qH-OO-eDZ" secondAttribute="leading" id="DFx-8x-47Q"/>
+                            <constraint firstItem="6yu-nZ-jxx" firstAttribute="top" secondItem="OUM-Ia-3BD" secondAttribute="top" id="VSU-qz-diQ"/>
+                            <constraint firstItem="OUM-Ia-3BD" firstAttribute="bottom" secondItem="6yu-nZ-jxx" secondAttribute="bottom" id="eJX-Et-WsS"/>
+                            <constraint firstItem="WI7-fg-HNS" firstAttribute="centerY" secondItem="3qH-OO-eDZ" secondAttribute="centerY" id="fDx-xj-Upo"/>
+                            <constraint firstItem="OUM-Ia-3BD" firstAttribute="trailing" secondItem="6yu-nZ-jxx" secondAttribute="trailing" id="mdA-hi-mO5"/>
+                        </constraints>
+                    </view>
                     <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="7d3-8N-koI"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YxN-tq-ZOf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                    <connections>
+                        <outlet property="homeTableView" destination="6yu-nZ-jxx" id="eAd-Zb-xTG"/>
+                        <outlet property="loadingIndicator" destination="WI7-fg-HNS" id="2vj-Nm-zgf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bSm-xq-TtF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-186" y="-236"/>
+            <point key="canvasLocation" x="659" y="-286"/>
         </scene>
     </scenes>
     <resources>

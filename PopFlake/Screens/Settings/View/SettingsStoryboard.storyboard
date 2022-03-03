@@ -15,8 +15,20 @@
                     <view key="view" contentMode="scaleToFill" id="8EA-3h-daA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="settings page" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tOS-iA-nbN">
+                                <rect key="frame" x="134.5" y="433" width="145.5" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" systemColor="systemGray2Color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="cGM-IH-BT1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tOS-iA-nbN" firstAttribute="centerY" secondItem="8EA-3h-daA" secondAttribute="centerY" id="6IS-EM-kme"/>
+                            <constraint firstItem="tOS-iA-nbN" firstAttribute="centerX" secondItem="8EA-3h-daA" secondAttribute="centerX" id="Nt6-XF-iXN"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="seal.fill" catalog="system" id="g9z-eq-GOH"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -30,6 +42,9 @@
         <image name="seal.fill" catalog="system" width="128" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

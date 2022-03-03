@@ -29,7 +29,11 @@ class SearchViewController: UIViewController
             {
                 [weak self] in
                 guard let self = self else {return}
-                self.showAlert(with: "an error occurred!")
+                DispatchQueue.main.async
+                {
+                    self.showAlert(with: "an error occurred")
+                }
+                
             }
        
     }

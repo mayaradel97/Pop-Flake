@@ -14,7 +14,9 @@ class TopGossingMoviesTableViewCell: UITableViewCell,ItemTableViewCell, IDetails
     @IBOutlet weak var topGrossingTableView: UITableView!
     let cell = String(describing: TopGrossingInnerCell.self)
     var items: [Item] = []
-    override func awakeFromNib() {
+    var homeViewModel: HomeViewModel!
+    override func awakeFromNib()
+    {
         super.awakeFromNib()
         // Initialization code
     }
@@ -24,8 +26,9 @@ class TopGossingMoviesTableViewCell: UITableViewCell,ItemTableViewCell, IDetails
 
         // Configure the view for the selected state
     }
-    func configure(items: [Item])
+    func configure(items: [Item],homeViewModel: HomeViewModel)
     {
+        self.homeViewModel = homeViewModel
         self.items = items
         topGrossingTableView.reloadData()
     }
@@ -66,5 +69,12 @@ extension TopGossingMoviesTableViewCell: UITableViewDelegate,UITableViewDataSour
             self.showDetailsSafariView(with: id)
 
     }
-    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath)
+    {
+        
+            if indexPath.row == items.count - 1
+            {
+                homeViewModel.getTopGrossingItems()
+            }
+    }
 }

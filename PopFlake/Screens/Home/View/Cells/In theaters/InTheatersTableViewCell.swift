@@ -12,7 +12,7 @@ class InTheatersTableViewCell: UITableViewCell,ItemTableViewCell,IDetailsView
    
     let cell = String(describing: InTheatersCollectionViewCell.self)
     var items: [Item] = []
-
+    var homeViewModel: HomeViewModel!
     @IBOutlet weak var inTheatersCollectionView: UICollectionView!
     override func awakeFromNib()
     {
@@ -26,8 +26,9 @@ class InTheatersTableViewCell: UITableViewCell,ItemTableViewCell,IDetailsView
         // Configure the view for the selected state
     }
     
-    func configure(items: [Item])
+    func configure(items: [Item],homeViewModel: HomeViewModel)
     {
+        self.homeViewModel = homeViewModel
         self.items = items
         self.inTheatersCollectionView.reloadData()
     }
@@ -63,5 +64,12 @@ extension InTheatersTableViewCell: UICollectionViewDataSource,UICollectionViewDe
     {
         let id = items[indexPath.row].id
         self.showDetailsSafariView(with: id)
+    }
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath)
+    {
+        if indexPath.row == items.count - 1
+        {
+            homeViewModel.getInTheatersItems()
+        }
     }
 }

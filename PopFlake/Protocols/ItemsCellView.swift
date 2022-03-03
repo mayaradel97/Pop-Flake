@@ -8,7 +8,7 @@
 import Foundation
 protocol ItemTableViewCell
 {
-    func configure(items: [Item])
+    func configure(items: [Item],homeViewModel: HomeViewModel)
     func setUpCell()
     func configureCell(cell: ItemCollectionViewCell,indexPath: IndexPath)
 }

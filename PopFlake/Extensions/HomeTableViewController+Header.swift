@@ -7,11 +7,11 @@
 
 import UIKit
 //MARK: - Header creation
-extension HomeTableViewController
+extension HomeViewController
 {
     func configureHeaderView()
     {
-        
+        headerCollectionViewCell = String(describing: HeaderCollectionViewCell.self)
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
          headerCollectionView = UICollectionView(frame:  CGRect(x: 0, y: 0, width: self.view.frame.width, height: 300 ), collectionViewLayout: layout)
@@ -19,16 +19,16 @@ extension HomeTableViewController
         headerCollectionView.isUserInteractionEnabled = true
         headerCollectionView.dataSource = self
         headerCollectionView.delegate = self
-        headerCollectionView.register(UINib(nibName: cell, bundle: nil), forCellWithReuseIdentifier: cell)
+        headerCollectionView.register(UINib(nibName: headerCollectionViewCell, bundle: nil), forCellWithReuseIdentifier: headerCollectionViewCell)
         headerCollectionView.showsHorizontalScrollIndicator = false
-        tableView.tableHeaderView = headerCollectionView
+        homeTableView.tableHeaderView = headerCollectionView
         
     }
 
     
 }
 //MARK: - UICollectionViewDataSource
-extension HomeTableViewController: UICollectionViewDataSource,HeaderMovement
+extension HomeViewController: UICollectionViewDataSource,HeaderMovement
 {
     func moveToNextCell(index: Int)
     {
@@ -43,14 +43,14 @@ extension HomeTableViewController: UICollectionViewDataSource,HeaderMovement
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
         
-        let headerCell = collectionView.dequeueReusableCell(withReuseIdentifier: cell, for: indexPath) as! HeaderCollectionViewCell
+        let headerCell = collectionView.dequeueReusableCell(withReuseIdentifier: headerCollectionViewCell, for: indexPath) as! HeaderCollectionViewCell
         homeViewModel.configureHeaderCell(cell: headerCell, indexPath: indexPath)
        
         return headerCell
     }
 }
 //MARK: - UICollectionViewDelegateFlowLayout
-extension HomeTableViewController: UICollectionViewDelegateFlowLayout
+extension HomeViewController: UICollectionViewDelegateFlowLayout
 {
    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize

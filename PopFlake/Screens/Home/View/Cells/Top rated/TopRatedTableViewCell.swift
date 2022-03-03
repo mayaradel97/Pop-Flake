@@ -14,6 +14,7 @@ class TopRatedTableViewCell: UITableViewCell,ItemTableViewCell, IDetailsView
     @IBOutlet weak var topRatedCollectionView: UICollectionView!
     let cell = String(describing: InTheatersCollectionViewCell.self)
     var items: [Item] = []
+    var homeViewModel: HomeViewModel!
     override func awakeFromNib()
     {
         super.awakeFromNib()
@@ -25,8 +26,9 @@ class TopRatedTableViewCell: UITableViewCell,ItemTableViewCell, IDetailsView
 
         // Configure the view for the selected state
     }
-    func configure(items: [Item])
+    func configure(items: [Item],homeViewModel: HomeViewModel)
     {
+        self.homeViewModel = homeViewModel
         self.items = items
         topRatedCollectionView.reloadData()
     }
@@ -64,5 +66,12 @@ extension TopRatedTableViewCell: UICollectionViewDelegate,UICollectionViewDataSo
     {
         let id = items[indexPath.row].id
         self.showDetailsSafariView(with: id)
+    }
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath)
+    {
+        if indexPath.row == items.count - 1
+        {
+            homeViewModel.getTopRatedItems()
+        }
     }
 }

@@ -21,7 +21,7 @@
 		965F0CFB27CEB45800C3F646 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965F0CFA27CEB45800C3F646 /* SceneDelegate.swift */; };
 		965F0D0227CEB45B00C3F646 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 965F0D0127CEB45B00C3F646 /* Assets.xcassets */; };
 		965F0D0527CEB45B00C3F646 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 965F0D0327CEB45B00C3F646 /* LaunchScreen.storyboard */; };
-		965F0D0E27CEB4E800C3F646 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965F0D0D27CEB4E800C3F646 /* HomeTableViewController.swift */; };
+		965F0D0E27CEB4E800C3F646 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965F0D0D27CEB4E800C3F646 /* HomeViewController.swift */; };
 		965F0D1127CEB4FE00C3F646 /* HomeStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 965F0D1027CEB4FE00C3F646 /* HomeStoryboard.storyboard */; };
 		965F0D1527CEB5C000C3F646 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 965F0D1427CEB5BF00C3F646 /* Main.storyboard */; };
 		965F0D2827CEB95900C3F646 /* ComingSoonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965F0D2627CEB95900C3F646 /* ComingSoonTableViewCell.swift */; };
@@ -76,7 +76,7 @@
 		965F0D0127CEB45B00C3F646 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		965F0D0427CEB45B00C3F646 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		965F0D0627CEB45B00C3F646 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		965F0D0D27CEB4E800C3F646 /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
+		965F0D0D27CEB4E800C3F646 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		965F0D1027CEB4FE00C3F646 /* HomeStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeStoryboard.storyboard; sourceTree = "<group>"; };
 		965F0D1427CEB5BF00C3F646 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		965F0D2627CEB95900C3F646 /* ComingSoonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComingSoonTableViewCell.swift; sourceTree = "<group>"; };
@@ -181,7 +181,7 @@
 			children = (
 				965F0D8A27CED74900C3F646 /* Protocols */,
 				965F0D7827CED05300C3F646 /* Extensions */,
-				965F0D8327CED32A00C3F646 /* Network */,
+				965F0D8327CED32A00C3F646 /* Network Layer */,
 				965F0D3E27CEBB0300C3F646 /* Constants */,
 				965F0D1C27CEB85B00C3F646 /* Screens */,
 				965F0D1727CEB6AA00C3F646 /* Delegates */,
@@ -252,7 +252,7 @@
 		965F0D1F27CEB88300C3F646 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				965F0D0D27CEB4E800C3F646 /* HomeTableViewController.swift */,
+				965F0D0D27CEB4E800C3F646 /* HomeViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -469,12 +469,12 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		965F0D8327CED32A00C3F646 /* Network */ = {
+		965F0D8327CED32A00C3F646 /* Network Layer */ = {
 			isa = PBXGroup;
 			children = (
 				965F0D8427CED33900C3F646 /* NetworkLayer.swift */,
 			);
-			path = Network;
+			path = "Network Layer";
 			sourceTree = "<group>";
 		};
 		965F0D8A27CED74900C3F646 /* Protocols */ = {
@@ -625,7 +625,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				965F0D0E27CEB4E800C3F646 /* HomeTableViewController.swift in Sources */,
+				965F0D0E27CEB4E800C3F646 /* HomeViewController.swift in Sources */,
 				967B300127CFFDFC000D1D6E /* Trailor.swift in Sources */,
 				965F0D5A27CEC96A00C3F646 /* SearchViewController.swift in Sources */,
 				96A6186127D0D7F40021EDF5 /* SearchResultViewModel.swift in Sources */,

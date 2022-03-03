@@ -8,7 +8,7 @@
 import UIKit
 extension UIViewController: IDetailsView
 {
-    func showAlert(with message:String)
+    func showAlert(with message: String)
     {
         let alert = UIAlertController(title: "Error!", message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
