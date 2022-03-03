@@ -18,7 +18,8 @@ class PopFlakeTabBarViewModel
         let monitor = NWPathMonitor()
         let queue = DispatchQueue(label: "Monitor")
         monitor.pathUpdateHandler =
-        { path in
+        { [weak self] path in
+            guard let self = self else {return}
             if path.status != .satisfied
             {
                 self.bindNetworkStateToView()

@@ -15,6 +15,7 @@ extension HomeViewController
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
          headerCollectionView = UICollectionView(frame:  CGRect(x: 0, y: 0, width: self.view.frame.width, height: 300 ), collectionViewLayout: layout)
+        headerCollectionView.backgroundColor = .white
         headerCollectionView.isPagingEnabled = true
         headerCollectionView.isUserInteractionEnabled = true
         headerCollectionView.dataSource = self
@@ -48,6 +49,7 @@ extension HomeViewController: UICollectionViewDataSource,HeaderMovement
        
         return headerCell
     }
+
 }
 //MARK: - UICollectionViewDelegateFlowLayout
 extension HomeViewController: UICollectionViewDelegateFlowLayout

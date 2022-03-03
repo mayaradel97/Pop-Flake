@@ -9,8 +9,6 @@ import UIKit
 
 class InTheatersCollectionViewCell: UICollectionViewCell,ItemCollectionViewCell,ImageDataDelegate
 {
-   
-
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var itemImageView: UIImageView!
@@ -19,6 +17,7 @@ class InTheatersCollectionViewCell: UICollectionViewCell,ItemCollectionViewCell,
         super.awakeFromNib()
         self.layer.cornerRadius = 20
     }
+    
     func configure(item: Item)
     {
         titleLabel.text = item.title
@@ -28,6 +27,4 @@ class InTheatersCollectionViewCell: UICollectionViewCell,ItemCollectionViewCell,
         itemImageView.image = UIImage(data: imageData)
         itemImageView.contentMode = .scaleAspectFit
     }
-    
-
 }

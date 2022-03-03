@@ -59,6 +59,7 @@ class HomeViewController: UIViewController
                 DispatchQueue.main.async
                 {
                     self.homeTableView.isHidden = true
+                    self.loadingIndicator.stopAnimating()
                     self.headerCollectionView.isHidden = true
                     self.showAlert(with: "an error occurred")
                     

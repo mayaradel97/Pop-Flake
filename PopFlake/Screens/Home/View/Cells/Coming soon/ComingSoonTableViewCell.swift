@@ -13,10 +13,6 @@ class ComingSoonTableViewCell: UITableViewCell,ItemTableViewCell,IDetailsView
     let cell = String(describing: ComingSoonCollectionViewCell.self)
     var items: [Item] = []
     var homeViewModel: HomeViewModel!
-    override func awakeFromNib()
-    {
-        super.awakeFromNib()
-    }
     func setUpCell()
     {
         comingSoonCollectionView.register(UINib(nibName: cell, bundle: nil), forCellWithReuseIdentifier: cell)
@@ -29,25 +25,20 @@ class ComingSoonTableViewCell: UITableViewCell,ItemTableViewCell,IDetailsView
         self.homeViewModel = homeViewModel
         comingSoonCollectionView.reloadData()
     }
-    
-
-    override func setSelected(_ selected: Bool, animated: Bool)
-    {
-        super.setSelected(selected, animated: animated)
-    }
     func configureCell(cell: ItemCollectionViewCell,indexPath: IndexPath)
     {
         cell.configure(item: items[indexPath.row])
     }
     
 }
-extension ComingSoonTableViewCell: UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout
+//MARK: - UICollectionViewDataSource
+extension ComingSoonTableViewCell: UICollectionViewDataSource
 {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
         return items.count
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
         let comingSoonCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: cell, for: indexPath) as! ComingSoonCollectionViewCell
@@ -55,27 +46,30 @@ extension ComingSoonTableViewCell: UICollectionViewDelegate,UICollectionViewData
         return comingSoonCollectionViewCell
         
     }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: 200, height: 350)
-    }
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
-    {
-        let id = items[indexPath.row].id
-        self.showDetailsSafariView(with: id)
-    }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat
-    {
-        20
-    }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat
-    {
-        30
-    }
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath)
     {
         if indexPath.row == items.count - 1
         {
             homeViewModel.getComingSoonItems()
         }
+    }
+}
+
+//MARK: - UICollectionViewDelegate
+extension ComingSoonTableViewCell: UICollectionViewDelegate
+{
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
+    {
+        let id = items[indexPath.row].id
+        self.showDetailsSafariView(with: id)
+    }
+}
+
+// MARK: UICollectionViewDelegateFlowLayout
+extension ComingSoonTableViewCell: UICollectionViewDelegateFlowLayout
+{
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
+    {
+        return CGSize(width: 200, height: 350)
     }
 }

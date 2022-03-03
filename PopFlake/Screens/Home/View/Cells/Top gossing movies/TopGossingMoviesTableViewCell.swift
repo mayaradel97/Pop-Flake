@@ -9,23 +9,12 @@ import UIKit
 
 class TopGossingMoviesTableViewCell: UITableViewCell,ItemTableViewCell, IDetailsView
 {
-
+    
     
     @IBOutlet weak var topGrossingTableView: UITableView!
     let cell = String(describing: TopGrossingInnerCell.self)
     var items: [Item] = []
     var homeViewModel: HomeViewModel!
-    override func awakeFromNib()
-    {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
     func configure(items: [Item],homeViewModel: HomeViewModel)
     {
         self.homeViewModel = homeViewModel
@@ -46,7 +35,8 @@ class TopGossingMoviesTableViewCell: UITableViewCell,ItemTableViewCell, IDetails
         cell.configure(item: items[indexPath.row])
     }
 }
-extension TopGossingMoviesTableViewCell: UITableViewDelegate,UITableViewDataSource
+//MARK: - UITableViewDataSource
+extension TopGossingMoviesTableViewCell: UITableViewDataSource
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
@@ -62,19 +52,24 @@ extension TopGossingMoviesTableViewCell: UITableViewDelegate,UITableViewDataSour
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         80
     }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
-    {
-       
-            let id = items[indexPath.row].id
-            self.showDetailsSafariView(with: id)
-
-    }
+    
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath)
     {
         
-            if indexPath.row == items.count - 1
-            {
-                homeViewModel.getTopGrossingItems()
-            }
+        if indexPath.row == items.count - 1
+        {
+            homeViewModel.getTopGrossingItems()
+        }
+    }
+}
+//MARK: - UITableViewDelegate
+extension TopGossingMoviesTableViewCell: UITableViewDelegate
+{
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        
+        let id = items[indexPath.row].id
+        self.showDetailsSafariView(with: id)
+        
     }
 }

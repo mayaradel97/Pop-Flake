@@ -9,22 +9,11 @@ import UIKit
 
 class InTheatersTableViewCell: UITableViewCell,ItemTableViewCell,IDetailsView
 {
-   
+    
     let cell = String(describing: InTheatersCollectionViewCell.self)
     var items: [Item] = []
     var homeViewModel: HomeViewModel!
     @IBOutlet weak var inTheatersCollectionView: UICollectionView!
-    override func awakeFromNib()
-    {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
     
     func configure(items: [Item],homeViewModel: HomeViewModel)
     {
@@ -35,7 +24,7 @@ class InTheatersTableViewCell: UITableViewCell,ItemTableViewCell,IDetailsView
     
     func setUpCell()
     {
-       inTheatersCollectionView.register(UINib(nibName: cell, bundle: nil), forCellWithReuseIdentifier: cell)
+        inTheatersCollectionView.register(UINib(nibName: cell, bundle: nil), forCellWithReuseIdentifier: cell)
         inTheatersCollectionView.delegate = self
         inTheatersCollectionView.dataSource = self
     }
@@ -44,7 +33,9 @@ class InTheatersTableViewCell: UITableViewCell,ItemTableViewCell,IDetailsView
         cell.configure(item: items[indexPath.row])
     }
 }
-extension InTheatersTableViewCell: UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout
+
+//MARK: - UICollectionViewDataSource
+extension InTheatersTableViewCell: UICollectionViewDataSource
 {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
@@ -57,19 +48,30 @@ extension InTheatersTableViewCell: UICollectionViewDataSource,UICollectionViewDe
         self.configureCell(cell: inTheatersCollectionViewCell, indexPath: indexPath)
         return inTheatersCollectionViewCell
     }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: 200, height: 350)
-    }
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
-    {
-        let id = items[indexPath.row].id
-        self.showDetailsSafariView(with: id)
-    }
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath)
     {
         if indexPath.row == items.count - 1
         {
             homeViewModel.getInTheatersItems()
         }
+    }
+}
+
+//MARK: - InTheatersTableViewCell
+extension InTheatersTableViewCell: UICollectionViewDelegate
+{
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
+    {
+        let id = items[indexPath.row].id
+        self.showDetailsSafariView(with: id)
+    }
+}
+
+// MARK: UICollectionViewDelegateFlowLayout
+extension InTheatersTableViewCell: UICollectionViewDelegateFlowLayout
+{
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
+    {
+        CGSize(width: 200, height: 350)
     }
 }

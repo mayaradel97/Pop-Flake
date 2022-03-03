@@ -9,13 +9,13 @@ import UIKit
 
 class PopFlakeTabBarController: UITabBarController
 {
-   private var popFlakeTabBarViewModel: PopFlakeTabBarViewModel!
+    private var popFlakeTabBarViewModel: PopFlakeTabBarViewModel!
     override func viewDidLoad()
     {
         super.viewDidLoad()
         popFlakeTabBarViewModel = PopFlakeTabBarViewModel()
         self.bindNetworkState()
-
+        
     }
     
     func bindNetworkState()
@@ -26,7 +26,7 @@ class PopFlakeTabBarController: UITabBarController
                 guard let self = self else {return}
                 DispatchQueue.main.async
                 {
-                self.showAlert(with: "No Internt Connection")
+                    self.showAlert(with: "No Internt Connection")
                 }
                 
             }

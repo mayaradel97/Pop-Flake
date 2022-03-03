@@ -9,23 +9,10 @@ import UIKit
 
 class TopRatedTableViewCell: UITableViewCell,ItemTableViewCell, IDetailsView
 {
-    
-    
     @IBOutlet weak var topRatedCollectionView: UICollectionView!
     let cell = String(describing: InTheatersCollectionViewCell.self)
     var items: [Item] = []
     var homeViewModel: HomeViewModel!
-    override func awakeFromNib()
-    {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
     func configure(items: [Item],homeViewModel: HomeViewModel)
     {
         self.homeViewModel = homeViewModel
@@ -46,7 +33,9 @@ class TopRatedTableViewCell: UITableViewCell,ItemTableViewCell, IDetailsView
     }
     
 }
-extension TopRatedTableViewCell: UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout
+
+//MARK: - UICollectionViewDataSource
+extension TopRatedTableViewCell: UICollectionViewDataSource
 {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
@@ -59,19 +48,30 @@ extension TopRatedTableViewCell: UICollectionViewDelegate,UICollectionViewDataSo
         self.configureCell(cell: topRatedCollectionViewCell, indexPath: indexPath)
         return topRatedCollectionViewCell
     }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: 200, height: 350)
-    }
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
-    {
-        let id = items[indexPath.row].id
-        self.showDetailsSafariView(with: id)
-    }
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath)
     {
         if indexPath.row == items.count - 1
         {
             homeViewModel.getTopRatedItems()
         }
+    }
+}
+
+//MARK: - InTheatersTableViewCell
+extension TopRatedTableViewCell: UICollectionViewDelegate
+{
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
+    {
+        let id = items[indexPath.row].id
+        self.showDetailsSafariView(with: id)
+    }
+}
+
+// MARK: UICollectionViewDelegateFlowLayout
+extension TopRatedTableViewCell: UICollectionViewDelegateFlowLayout
+{
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
+    {
+        CGSize(width: 200, height: 350)
     }
 }
