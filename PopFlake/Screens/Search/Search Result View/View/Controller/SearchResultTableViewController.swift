@@ -73,6 +73,12 @@ extension SearchResultTableViewController: UITableViewDataSource,UITableViewDele
     {
         100
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        let id = searchResultViewModel.items[indexPath.row].id
+        self.showDetailsSafariView(with: id)
+       
+    }
 }
 
 

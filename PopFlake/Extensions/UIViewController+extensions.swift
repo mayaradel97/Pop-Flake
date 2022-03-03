@@ -6,7 +6,7 @@
 //
 
 import UIKit
-extension UIViewController
+extension UIViewController: IDetailsView
 {
     func showAlert(with message:String)
     {
@@ -15,4 +15,8 @@ extension UIViewController
         alert.addAction(okAction)
         self.present(alert, animated: true, completion: nil)
     }
+   
 }
+
+
+

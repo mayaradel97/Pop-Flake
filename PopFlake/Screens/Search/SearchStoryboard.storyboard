@@ -32,9 +32,6 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="HwA-N5-2QN"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="noSearchLabel" destination="eGh-jF-o3f" id="CsE-Ox-QQt"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sE8-mc-WUp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -73,7 +70,6 @@
                     </view>
                     <connections>
                         <outlet property="loadingIndicator" destination="kv2-ci-pgX" id="mzn-Tb-VOn"/>
-                        <outlet property="noSearchLabel" destination="eGh-jF-o3f" id="46g-yo-8tj"/>
                         <outlet property="tableView" destination="fOc-ep-mdi" id="u3l-Ky-jWg"/>
                     </connections>
                 </viewController>

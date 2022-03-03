@@ -7,7 +7,7 @@
 
 import UIKit
 
-class InTheatersTableViewCell: UITableViewCell,ItemTableViewCell
+class InTheatersTableViewCell: UITableViewCell,ItemTableViewCell,IDetailsView
 {
    
     let cell = String(describing: InTheatersCollectionViewCell.self)
@@ -59,5 +59,9 @@ extension InTheatersTableViewCell: UICollectionViewDataSource,UICollectionViewDe
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         CGSize(width: 200, height: 350)
     }
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
+    {
+        let id = items[indexPath.row].id
+        self.showDetailsSafariView(with: id)
+    }
 }

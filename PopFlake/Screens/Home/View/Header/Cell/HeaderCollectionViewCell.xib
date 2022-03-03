@@ -28,6 +28,9 @@
                             <imageReference key="image" image="play.circle" catalog="system" symbolScale="large"/>
                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
                         </state>
+                        <connections>
+                            <action selector="playButtonPressed:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Tn2-Xv-p9t"/>
+                        </connections>
                     </button>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9M6-Sm-v7i">
                         <rect key="frame" x="16" y="125" width="100" height="150"/>

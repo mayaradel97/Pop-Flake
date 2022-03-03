@@ -12,6 +12,7 @@ class HomeTableViewController: UITableViewController
    var homeViewModel: HomeViewModel!
     let cell = String(describing: HeaderCollectionViewCell.self)
     var headerCollectionView: UICollectionView!
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()

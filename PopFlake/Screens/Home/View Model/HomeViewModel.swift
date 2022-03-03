@@ -56,8 +56,7 @@ class HomeViewModel
     {
         guard let randomItem = getRandomItem(items: inTheatersItems)
        else {return}
-        API.id = randomItem.id
-        networkLayer.getResponse(of: Trailor.self, url: API.trailorMoviesURL)
+        networkLayer.getResponse(of: Trailor.self, url: API.getTrailorMoviesURL(with:randomItem.id))
         { [weak self](item) in
             guard let self = self else {return}
             if  let item = item

@@ -22,9 +22,8 @@ class SearchViewModel
     func getSearchResult(with text: String)
     {
         self.bindShowLoadingIndicatorToView()
-        let txt = text.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
-        API.expression = txt!
-        networkLayer.getResponse(of: ItemSearchResult.self, url: API.searchURL)
+        let searchedText = text.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
+        networkLayer.getResponse(of: ItemSearchResult.self, url: API.getSearchURL(with: searchedText))
         { [weak self](items) in
             guard let self = self else {return}
             if  let items = items

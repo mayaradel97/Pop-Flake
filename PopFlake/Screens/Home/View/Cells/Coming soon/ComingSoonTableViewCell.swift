@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ComingSoonTableViewCell: UITableViewCell,ItemTableViewCell
+class ComingSoonTableViewCell: UITableViewCell,ItemTableViewCell,IDetailsView
 {
     func configure(items: [Item])
     {
@@ -63,5 +63,9 @@ extension ComingSoonTableViewCell: UICollectionViewDelegate,UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         CGSize(width: 200, height: 350)
     }
-
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
+    {
+        let id = items[indexPath.row].id
+        self.showDetailsSafariView(with: id)
+    }
 }

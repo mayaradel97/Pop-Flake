@@ -8,19 +8,26 @@
 import Foundation
 struct API
 {
-    static let comingSoonURL = URL(string:  "https://imdb-api.com/en/API/ComingSoon/k_h6qxabfo")!
-    static let inTheatersURL = URL(string:  "https://imdb-api.com/en/API/InTheaters/k_h6qxabfo")!
+    static let comingSoonURL = URL(string:  "https://imdb-api.com/en/API/ComingSoon/k_usuzybq8")!
+    static let inTheatersURL = URL(string:  "https://imdb-api.com/en/API/InTheaters/k_usuzybq8")!
     static let topRatingMoviesURL =
-        URL(string:  "https://imdb-api.com/en/API/Top250Movies/k_h6qxabfo")!
+        URL(string:  "https://imdb-api.com/en/API/Top250Movies/k_usuzybq8")!
    
     static let topGrossingMoviesURL =
-        URL(string:  "https://imdb-api.com/en/API/BoxOffice/k_h6qxabfo")!
-    static var id: String = ""
-    static var trailorMoviesURL: URL
+        URL(string:  "https://imdb-api.com/en/API/BoxOffice/k_usuzybq8")!
+
+   static func getTrailorMoviesURL(with id :String) -> URL
     {
-        return  URL(string:  "https://imdb-api.com/en/API/Trailer/k_h6qxabfo/\(id)")!
+        return  URL(string:  "https://imdb-api.com/en/API/Trailer/k_usuzybq8/\(id)")!
     }
-    static var expression: String = ""
-    static var searchURL  =
-        URL(string:  "https://imdb-api.com/en/API/Search/k_h6qxabfo/\(expression)")!
+    static func getSearchURL(with expression: String)->URL
+    {
+        return URL(string:  "https://imdb-api.com/en/API/Search/k_usuzybq8/\(expression)")!
+    }
+    static func getDetailsURL(with id: String)-> URL
+    {
+        return  URL(string:"https://www.imdb.com/title/\(id)")!
+    }
+   
+        
 }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TopGossingMoviesTableViewCell: UITableViewCell,ItemTableViewCell
+class TopGossingMoviesTableViewCell: UITableViewCell,ItemTableViewCell, IDetailsView
 {
 
     
@@ -59,6 +59,12 @@ extension TopGossingMoviesTableViewCell: UITableViewDelegate,UITableViewDataSour
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         80
     }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+       
+            let id = items[indexPath.row].id
+            self.showDetailsSafariView(with: id)
+
+    }
     
 }

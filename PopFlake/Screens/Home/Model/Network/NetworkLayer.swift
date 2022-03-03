@@ -19,8 +19,15 @@ class NetworkLayer
                 completion(nil)
                 return
             }
+            guard let data = data
+            else
+            {
+                completion(nil)
+                return
+            }
+            
             let decoder = JSONDecoder()
-            let results = try! decoder.decode(T.self, from: data!)
+            let results = try! decoder.decode(T.self, from: data)
             completion(results)
         }
         task.resume()
