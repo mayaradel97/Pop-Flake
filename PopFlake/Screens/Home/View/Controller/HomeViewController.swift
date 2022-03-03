@@ -15,22 +15,34 @@ class HomeViewController: UIViewController
     var homeViewModel: HomeViewModel!
     var headerCollectionViewCell: String!
     var headerCollectionView: UICollectionView!
-    
+    private var refreshController: UIRefreshControl!
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
         homeViewModel = HomeViewModel()
+        self.showRefreshController()
         self.UIManagement()
         self.tableViewConfiguration()
         self.configureHeaderView()
         self.bindItems()
         self.bindFailure()
-        self.bindShowLoadingIndicator()
-        self.bindHideLoadingIndicator()
         
+    }
+    //MARK: - RefreshController
+    func showRefreshController()
+    {
+        refreshController = UIRefreshControl()
+        refreshController.tintColor = .darkGray
+        refreshController.addTarget(self, action: #selector(refreshHomeTableView), for: .valueChanged)
+        homeTableView.addSubview(refreshController)
         
-
+    }
+    @objc func refreshHomeTableView()
+    {
+        homeViewModel.getData()
+        refreshController.endRefreshing()
+        homeTableView.reloadData()
+        
     }
     func UIManagement()
     {
@@ -49,29 +61,10 @@ class HomeViewController: UIViewController
                     self.homeTableView.isHidden = true
                     self.headerCollectionView.isHidden = true
                     self.showAlert(with: "an error occurred")
-                   
+                    
                 }
-               
+                
             }
-    }
-    func bindShowLoadingIndicator()
-    {
-        print("binding")
-        homeViewModel.bindShowLoadingIndicatorToView =
-            {
-                [weak self] in
-                guard let self = self else {return}
-                DispatchQueue.main.async
-                {
-                    self.homeTableView.isHidden = true
-                    self.loadingIndicator.startAnimating()
-                }
-            }
-            
-    }
-    func bindHideLoadingIndicator()
-    {
-        
     }
     func bindItems()
     {
@@ -97,36 +90,33 @@ class HomeViewController: UIViewController
             homeTableView.register(UINib(nibName: $0.rawValue, bundle: nil), forCellReuseIdentifier: $0.rawValue)
         }
     }
-  
+    
 }
-// MARK: - Table view data source
-extension HomeViewController: UITableViewDelegate,UITableViewDataSource
+// MARK: - UITableViewDataSource
+extension HomeViewController: UITableViewDataSource
 {
-     func numberOfSections(in tableView: UITableView) -> Int
+    func numberOfSections(in tableView: UITableView) -> Int
     {
         return homeViewModel.headers.count
     }
-     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
-    {
-        60
-    }
     
-     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         return 1
     }
-     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?
     {
         
         return homeViewModel.headers[section].title
         
     }
     
-     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
         400
     }
-     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         switch indexPath.section
         {
@@ -153,7 +143,12 @@ extension HomeViewController: UITableViewDelegate,UITableViewDataSource
         
         
     }
-    
-    
-    
+}
+//MARK: - UITableViewDelegate
+extension HomeViewController: UITableViewDelegate
+{
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
+    {
+        60
+    }
 }

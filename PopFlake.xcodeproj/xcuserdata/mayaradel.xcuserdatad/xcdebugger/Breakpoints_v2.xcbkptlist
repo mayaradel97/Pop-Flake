@@ -110,8 +110,8 @@
             filePath = "PopFlake/Screens/Home/View Model/HomeViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "163"
-            endingLineNumber = "163"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
             landmarkName = "getTopRatedItems()"
             landmarkType = "7">
          </BreakpointContent>
@@ -126,8 +126,8 @@
             filePath = "PopFlake/Screens/Home/View Model/HomeViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "194"
-            endingLineNumber = "194"
+            startingLineNumber = "193"
+            endingLineNumber = "193"
             landmarkName = "configureCell(cell:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -142,8 +142,8 @@
             filePath = "PopFlake/Screens/Home/View Model/HomeViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "202"
-            endingLineNumber = "202"
+            startingLineNumber = "201"
+            endingLineNumber = "201"
             landmarkName = "configureCell(cell:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -199,38 +199,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "69668801-E748-43DD-BBDD-0D097134EC0E"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PopFlake/Screens/Home/View Model/HomeViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
-            landmarkName = "getMoviesTrailors()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "DFE74EF1-DEB7-4946-8161-7CEE028C373B"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PopFlake/Screens/Home/View Model/HomeViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "getMoviesTrailors()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "F437A494-0382-42E1-BC1D-4A51BA6B18DA"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -270,10 +238,10 @@
             filePath = "PopFlake/Screens/Home/View Model/HomeViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "155"
-            endingLineNumber = "155"
-            landmarkName = "HomeViewModel"
-            landmarkType = "3">
+            startingLineNumber = "154"
+            endingLineNumber = "154"
+            landmarkName = "getInTheatersItems()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -286,8 +254,8 @@
             filePath = "PopFlake/Screens/Home/View Model/HomeViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
             landmarkName = "startTimer()"
             landmarkType = "7">
          </BreakpointContent>
@@ -302,8 +270,8 @@
             filePath = "PopFlake/Screens/Home/View Model/HomeViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
             landmarkName = "moveToNextIndex()"
             landmarkType = "7">
          </BreakpointContent>
@@ -318,8 +286,8 @@
             filePath = "PopFlake/Screens/Home/View Model/HomeViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
             landmarkName = "moveToNextIndex()"
             landmarkType = "7">
          </BreakpointContent>
@@ -334,8 +302,8 @@
             filePath = "PopFlake/Screens/Home/View Model/HomeViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
             landmarkName = "moveToNextIndex()"
             landmarkType = "7">
          </BreakpointContent>
@@ -446,8 +414,8 @@
             filePath = "PopFlake/Screens/Home/View/Controller/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
             landmarkName = "numberOfSections(in:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -462,8 +430,8 @@
             filePath = "PopFlake/Screens/Home/View Model/HomeViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
             landmarkName = "moveToNextIndex()"
             landmarkType = "7">
          </BreakpointContent>

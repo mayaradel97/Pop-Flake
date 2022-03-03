@@ -16,10 +16,7 @@ class HomeViewModel
     var itemsTrailors: [Trailor]
     var networkLayer: NetworkLayer!
     var bindItemsToView: (()->())!
-    var bindShowLoadingIndicatorToView: (()->())!
-    var bindHideLoadingIndicatorToView: (()->())!
     var bindFailureToView: (()->())!
-    
     var timer: Timer?
     var currentHeaderIndex = 0
     
@@ -32,18 +29,22 @@ class HomeViewModel
         itemsTrailors = []
         networkLayer = NetworkLayer()
         headers =
-        [
-            Header(title: "Coming Soon to theaters(US)"),
-            Header(title: "In Theaters"),
-            Header(title: "Top Rated Movies"),
-            Header(title: "Top box Office(US)"),
-        ]
+            [
+                Header(title: "Coming Soon to theaters(US)"),
+                Header(title: "In Theaters"),
+                Header(title: "Top Rated Movies"),
+                Header(title: "Top box Office(US)"),
+            ]
+        self.getData()
+        
+    }
+    func getData()
+    {
         self.startTimer()
         self.getComingSoonItems()
         self.getInTheatersItems()
         self.getTopRatedItems()
-       self.getTopGrossingItems()
-        
+        self.getTopGrossingItems()
     }
     //MARK: - Header
     func getRandomItem(items: [Item]) ->Item?
@@ -54,35 +55,13 @@ class HomeViewModel
         {
             return nil
         }
-       return item
-    }
-    func getMoviesTrailors()
-    {
-        guard let randomItem = getRandomItem(items: inTheatersItems)
-       else {return}
-        networkLayer.getResponse(of: Trailor.self, url: API.getTrailorMoviesURL(with:randomItem.id))
-        { [weak self](item) in
-            guard let self = self else {return}
-            if  let item = item
-            {
-                var itemData = item
-                itemData.posterImage = randomItem.image
-                self.itemsTrailors.append(itemData)
-                self.bindItemsToView()
-            }
-            else
-            {
-                //bind failure
-                self.bindFailureToView()
-            }
-            
-        }
+        return item
     }
     func startTimer()
     {
         timer = Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(moveToNextIndex), userInfo: nil, repeats: true)
     }
-   @objc func moveToNextIndex()
+    @objc func moveToNextIndex()
     {
         if currentHeaderIndex < itemsTrailors.count - 1
         {
@@ -93,8 +72,6 @@ class HomeViewModel
     func configureHeaderCell(cell: HeaderCellView,indexPath: IndexPath)
     {
         cell.configure(itemTrailor: itemsTrailors[indexPath.row])
-       
-        
     }
     func configureHeaderMovement(cell: HeaderMovement)
     {
@@ -125,11 +102,33 @@ class HomeViewModel
             
         }
     }
+    func getMoviesTrailors()
+    {
+        guard let randomItem = getRandomItem(items: inTheatersItems)
+        else {return}
+        networkLayer.getResponse(of: Trailor.self, url: API.getTrailorMoviesURL(with:randomItem.id))
+        { [weak self](item) in
+            guard let self = self else {return}
+            if  let item = item
+            {
+                var itemData = item
+                itemData.posterImage = randomItem.image
+                self.itemsTrailors.append(itemData)
+                self.bindItemsToView()
+            }
+            else
+            {
+                //bind failure
+                self.bindFailureToView()
+            }
+            
+        }
+    }
     func getAllTrailors()
     {
         for _ in self.inTheatersItems
         {
-        self.getMoviesTrailors()
+            self.getMoviesTrailors()
         }
     }
     func getInTheatersItems()
@@ -142,7 +141,7 @@ class HomeViewModel
                 self.inTheatersItems += items.items
                 self.bindItemsToView()
                 self.getAllTrailors()
-               
+                
             }
             else
             {
@@ -152,7 +151,7 @@ class HomeViewModel
             
         }
     }
- 
+    
     func getTopRatedItems()
     {
         networkLayer.getResponse(of: Items.self, url: API.topRatingMoviesURL)
@@ -205,6 +204,6 @@ class HomeViewModel
         default:
             print("other")
         }
-       
+        
     }
 }
