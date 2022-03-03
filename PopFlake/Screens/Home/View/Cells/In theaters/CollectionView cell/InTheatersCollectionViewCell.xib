@@ -21,7 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="279" height="313.5"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hLg-AN-ClU">
-                        <rect key="frame" x="16" y="351.5" width="247" height="20.5"/>
+                        <rect key="frame" x="16" y="351.5" width="247" height="32.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -44,6 +44,7 @@
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="bPi-o0-Gbe" secondAttribute="trailing" constant="16" id="3sN-wq-dxH"/>
                 <constraint firstItem="4oe-oT-4CT" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.8" id="EcS-nd-3Gg"/>
@@ -57,6 +58,7 @@
                 <constraint firstItem="hLg-AN-ClU" firstAttribute="top" secondItem="Rjy-hr-N0n" secondAttribute="bottom" constant="8" id="hEY-Sd-3UD"/>
                 <constraint firstItem="bPi-o0-Gbe" firstAttribute="top" secondItem="4oe-oT-4CT" secondAttribute="bottom" constant="8" id="piV-hi-6OY"/>
                 <constraint firstItem="bPi-o0-Gbe" firstAttribute="leading" secondItem="Rjy-hr-N0n" secondAttribute="trailing" constant="3" id="pjI-6M-ykd"/>
+                <constraint firstAttribute="bottom" secondItem="hLg-AN-ClU" secondAttribute="bottom" constant="8" id="pls-fa-fzE"/>
             </constraints>
             <size key="customSize" width="279" height="392"/>
             <connections>

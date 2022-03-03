@@ -181,6 +181,7 @@
 			children = (
 				965F0D8A27CED74900C3F646 /* Protocols */,
 				965F0D7827CED05300C3F646 /* Extensions */,
+				965F0D8327CED32A00C3F646 /* Network */,
 				965F0D3E27CEBB0300C3F646 /* Constants */,
 				965F0D1C27CEB85B00C3F646 /* Screens */,
 				965F0D1727CEB6AA00C3F646 /* Delegates */,
@@ -259,10 +260,10 @@
 		965F0D2027CEB8BF00C3F646 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				965F0D3827CEB9EB00C3F646 /* Top gossing movies */,
-				965F0D3227CEB9B800C3F646 /* Top rated */,
-				965F0D2C27CEB98900C3F646 /* In theaters */,
 				965F0D2B27CEB96000C3F646 /* Coming soon */,
+				965F0D2C27CEB98900C3F646 /* In theaters */,
+				965F0D3227CEB9B800C3F646 /* Top rated */,
+				965F0D3827CEB9EB00C3F646 /* Top gossing movies */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -271,8 +272,8 @@
 			isa = PBXGroup;
 			children = (
 				965F0D4227CEBE3F00C3F646 /* CollectionView cell */,
-				965F0D2727CEB95900C3F646 /* ComingSoonTableViewCell.xib */,
 				965F0D2627CEB95900C3F646 /* ComingSoonTableViewCell.swift */,
+				965F0D2727CEB95900C3F646 /* ComingSoonTableViewCell.xib */,
 			);
 			path = "Coming soon";
 			sourceTree = "<group>";
@@ -336,7 +337,6 @@
 		965F0D4D27CEC4C300C3F646 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				965F0D8327CED32A00C3F646 /* Network */,
 				965F0D7D27CED15D00C3F646 /* Header.swift */,
 				965F0D8727CED49C00C3F646 /* Item.swift */,
 				967B300027CFFDFC000D1D6E /* Trailor.swift */,

@@ -17,9 +17,10 @@ class HomeTableViewController: UITableViewController
     {
         super.viewDidLoad()
         homeViewModel = HomeViewModel()
-        self.cellRegesteration()
+        self.tableViewConfiguration()
         self.bindItems()
         self.configureHeaderView()
+
     }
     
     
@@ -37,9 +38,9 @@ class HomeTableViewController: UITableViewController
                 }
             }
     }
-    
-    func cellRegesteration()
+    func tableViewConfiguration()
     {
+        UITableViewHeaderFooterView.appearance().tintColor = .white
         HomeTableViewCellConstant.allCases.forEach
         {
             tableView.register(UINib(nibName: $0.rawValue, bundle: nil), forCellReuseIdentifier: $0.rawValue)
@@ -68,7 +69,7 @@ class HomeTableViewController: UITableViewController
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
-        360
+        400
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {

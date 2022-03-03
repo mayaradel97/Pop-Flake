@@ -14,7 +14,8 @@ class TopRatedTableViewCell: UITableViewCell,ItemTableViewCell, IDetailsView
     @IBOutlet weak var topRatedCollectionView: UICollectionView!
     let cell = String(describing: InTheatersCollectionViewCell.self)
     var items: [Item] = []
-    override func awakeFromNib() {
+    override func awakeFromNib()
+    {
         super.awakeFromNib()
         // Initialization code
     }

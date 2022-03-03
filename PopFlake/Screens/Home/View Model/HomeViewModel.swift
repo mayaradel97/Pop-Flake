@@ -29,10 +29,10 @@ class HomeViewModel
         networkLayer = NetworkLayer()
         headers =
         [
-            Header(title: "Coming Soon"),
+            Header(title: "Coming Soon to theaters(US)"),
             Header(title: "In Theaters"),
             Header(title: "Top Rated Movies"),
-            Header(title: "Top box Office"),
+            Header(title: "Top box Office(US)"),
         ]
         self.startTimer()
         self.getComingSoonItems()

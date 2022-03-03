@@ -45,6 +45,6 @@ class HeaderCollectionViewCell: UICollectionViewCell,HeaderCellView,ImageDataDel
        {
            return
        }
-            UIApplication.shared.open(url)
+        UIApplication.shared.open(url)
     }
 }

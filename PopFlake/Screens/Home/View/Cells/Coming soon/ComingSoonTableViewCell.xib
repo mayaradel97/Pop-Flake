@@ -18,8 +18,8 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="42U-T9-HZx">
-                        <rect key="frame" x="0.0" y="0.0" width="401" height="138"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <rect key="frame" x="0.0" y="24" width="401" height="106"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0wD-i9-FBl">
                             <size key="itemSize" width="128" height="128"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -28,16 +28,16 @@
                         </collectionViewFlowLayout>
                     </collectionView>
                 </subviews>
-                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="42U-T9-HZx" secondAttribute="bottom" constant="16" id="ChT-jb-Tv7"/>
+                    <constraint firstAttribute="bottom" secondItem="42U-T9-HZx" secondAttribute="bottom" constant="24" id="ChT-jb-Tv7"/>
                     <constraint firstItem="42U-T9-HZx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ESo-o3-Gml"/>
-                    <constraint firstItem="42U-T9-HZx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="UbY-DX-Jvf"/>
+                    <constraint firstItem="42U-T9-HZx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="24" id="UbY-DX-Jvf"/>
                     <constraint firstAttribute="trailing" secondItem="42U-T9-HZx" secondAttribute="trailing" id="nYM-Pj-wl4"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
             <connections>
                 <outlet property="comingSoonCollectionView" destination="42U-T9-HZx" id="guw-hu-Tx6"/>
             </connections>
@@ -45,8 +45,8 @@
         </tableViewCell>
     </objects>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -24,7 +24,7 @@ class ComingSoonTableViewCell: UITableViewCell,ItemTableViewCell,IDetailsView
         super.awakeFromNib()
       //  self.setUpCell()
        
-        
+  
        
     }
     func setUpCell()
@@ -67,5 +67,13 @@ extension ComingSoonTableViewCell: UICollectionViewDelegate,UICollectionViewData
     {
         let id = items[indexPath.row].id
         self.showDetailsSafariView(with: id)
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat
+    {
+        20
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat
+    {
+        30
     }
 }
