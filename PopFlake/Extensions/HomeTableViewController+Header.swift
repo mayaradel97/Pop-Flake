@@ -22,6 +22,7 @@ extension HomeTableViewController
         headerCollectionView.register(UINib(nibName: cell, bundle: nil), forCellWithReuseIdentifier: cell)
         headerCollectionView.showsHorizontalScrollIndicator = false
         tableView.tableHeaderView = headerCollectionView
+        
     }
 
     
@@ -44,7 +45,7 @@ extension HomeTableViewController: UICollectionViewDataSource,HeaderMovement
         
         let headerCell = collectionView.dequeueReusableCell(withReuseIdentifier: cell, for: indexPath) as! HeaderCollectionViewCell
         homeViewModel.configureHeaderCell(cell: headerCell, indexPath: indexPath)
-        homeViewModel.configureHeaderMovement(cell: self)
+       
         return headerCell
     }
 }

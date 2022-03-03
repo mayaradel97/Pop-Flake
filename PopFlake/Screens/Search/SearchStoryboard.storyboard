@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Search-->
+        <scene sceneID="vsr-wx-iqz">
+            <objects>
+                <viewController storyboardIdentifier="SearchViewController" id="qHS-k3-soO" customClass="SearchViewController" customModule="PopFlake" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qnr-Qq-wIV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="no movie found" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eGh-jF-o3f">
+                                <rect key="frame" x="125" y="433" width="164.5" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" systemColor="opaqueSeparatorColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nWZ-7Y-AIV"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="eGh-jF-o3f" firstAttribute="centerX" secondItem="Qnr-Qq-wIV" secondAttribute="centerX" id="D2h-4H-fEZ"/>
+                            <constraint firstItem="eGh-jF-o3f" firstAttribute="centerY" secondItem="Qnr-Qq-wIV" secondAttribute="centerY" id="R3y-GU-r0Z"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="HwA-N5-2QN"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="noSearchLabel" destination="eGh-jF-o3f" id="CsE-Ox-QQt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sE8-mc-WUp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-139" y="76"/>
+        </scene>
+        <!--Search Result Table View Controller-->
+        <scene sceneID="Qaw-ez-DS0">
+            <objects>
+                <viewController storyboardIdentifier="SearchResultTableViewController" id="SiN-af-Q5Q" customClass="SearchResultTableViewController" customModule="PopFlake" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="51t-pF-2iz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fOc-ep-mdi">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="SiN-af-Q5Q" id="qG9-j4-FCq"/>
+                                    <outlet property="delegate" destination="SiN-af-Q5Q" id="3e0-So-gws"/>
+                                </connections>
+                            </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="kv2-ci-pgX">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="YOh-jJ-zFj"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fOc-ep-mdi" firstAttribute="top" secondItem="YOh-jJ-zFj" secondAttribute="top" id="53V-Gx-Os8"/>
+                            <constraint firstItem="fOc-ep-mdi" firstAttribute="leading" secondItem="YOh-jJ-zFj" secondAttribute="leading" id="AzO-08-wg9"/>
+                            <constraint firstItem="YOh-jJ-zFj" firstAttribute="trailing" secondItem="fOc-ep-mdi" secondAttribute="trailing" id="LIs-gV-zrh"/>
+                            <constraint firstItem="YOh-jJ-zFj" firstAttribute="bottom" secondItem="fOc-ep-mdi" secondAttribute="bottom" id="ahv-OP-vcG"/>
+                            <constraint firstItem="kv2-ci-pgX" firstAttribute="centerY" secondItem="51t-pF-2iz" secondAttribute="centerY" id="f78-vL-Rbe"/>
+                            <constraint firstItem="kv2-ci-pgX" firstAttribute="centerX" secondItem="51t-pF-2iz" secondAttribute="centerX" id="yVQ-OE-lqM"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="loadingIndicator" destination="kv2-ci-pgX" id="mzn-Tb-VOn"/>
+                        <outlet property="noSearchLabel" destination="eGh-jF-o3f" id="46g-yo-8tj"/>
+                        <outlet property="tableView" destination="fOc-ep-mdi" id="u3l-Ky-jWg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C7r-IX-yrM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1299" y="100"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -24,12 +24,13 @@ class HomeTableViewController: UITableViewController
     
     func bindItems()
     {
-        homeViewModel.bindProductsToView =
+        homeViewModel.bindItemsToView =
             {
                 [weak self] in
                 guard let self = self else {return}
                 DispatchQueue.main.async
                 {
+                    self.homeViewModel.configureHeaderMovement(cell: self)
                     self.tableView.reloadData()
                     self.headerCollectionView.reloadData()
                 }

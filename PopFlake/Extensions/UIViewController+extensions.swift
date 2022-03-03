@@ -6,7 +6,7 @@
 //
 
 import UIKit
-extension UITabBarController
+extension UIViewController
 {
     func showAlert(with message:String)
     {

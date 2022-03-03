@@ -15,7 +15,7 @@ class HomeViewModel
     var topGrossingItems: [Item]
     var itemsTrailors: [Trailor]
     var networkLayer: NetworkLayer!
-    var bindProductsToView: (()->())!
+    var bindItemsToView: (()->())!
     var timer: Timer?
     var currentHeaderIndex = 0
     
@@ -35,10 +35,10 @@ class HomeViewModel
             Header(title: "Top box Office"),
         ]
         self.startTimer()
-//        self.getComingSoonItems()
+        self.getComingSoonItems()
         self.getInTheatersItems()
-//        self.getTopRatedItems()
-//       self.getTopGrossingItems()
+        self.getTopRatedItems()
+       self.getTopGrossingItems()
         
     }
     //MARK: - Header
@@ -57,7 +57,7 @@ class HomeViewModel
         guard let randomItem = getRandomItem(items: inTheatersItems)
        else {return}
         API.id = randomItem.id
-        networkLayer.getResponse(of: Trailor.self, url: API.trailorMovies)
+        networkLayer.getResponse(of: Trailor.self, url: API.trailorMoviesURL)
         { [weak self](item) in
             guard let self = self else {return}
             if  let item = item
@@ -65,7 +65,7 @@ class HomeViewModel
                 var itemData = item
                 itemData.posterImage = randomItem.image
                 self.itemsTrailors.append(itemData)
-                self.bindProductsToView()
+                self.bindItemsToView()
             }
             else
             {
@@ -83,9 +83,7 @@ class HomeViewModel
         if currentHeaderIndex < itemsTrailors.count - 1
         {
             currentHeaderIndex += 1
-            self.bindProductsToView()
-            print("timeeer")
-            print(currentHeaderIndex)
+            self.bindItemsToView()
         }
     }
     func configureHeaderCell(cell: HeaderCellView,indexPath: IndexPath)
@@ -108,7 +106,7 @@ class HomeViewModel
             if let items = items
             {
                 self.comingSonnItems = items.items
-                self.bindProductsToView()
+                self.bindItemsToView()
             }
             else
             {
@@ -132,7 +130,7 @@ class HomeViewModel
             if let items = items
             {
                 self.inTheatersItems = items.items
-                self.bindProductsToView()
+                self.bindItemsToView()
                 self.getAllTrailors()
                
             }
@@ -146,13 +144,13 @@ class HomeViewModel
  
     func getTopRatedItems()
     {
-        networkLayer.getResponse(of: Items.self, url: API.topRatingMovies)
+        networkLayer.getResponse(of: Items.self, url: API.topRatingMoviesURL)
         { [weak self](items) in
             guard let self = self else {return}
             if let items = items
             {
                 self.topRatedItems = items.items
-                self.bindProductsToView()
+                self.bindItemsToView()
             }
             else
             {
@@ -163,13 +161,13 @@ class HomeViewModel
     }
     func getTopGrossingItems()
     {
-        networkLayer.getResponse(of: Items.self, url: API.topGrossingMovies)
+        networkLayer.getResponse(of: Items.self, url: API.topGrossingMoviesURL)
         { [weak self](items) in
             guard let self = self else {return}
             if let items = items
             {
                 self.topGrossingItems = items.items
-                self.bindProductsToView()
+                self.bindItemsToView()
             }
             else
             {
