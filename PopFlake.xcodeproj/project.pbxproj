@@ -11,6 +11,7 @@
 		960FC9FA27CFCD3A005B3E8E /* HeaderCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 960FC9F827CFCD3A005B3E8E /* HeaderCollectionViewCell.xib */; };
 		960FCA0627CFF353005B3E8E /* HomeViewController+Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960FCA0527CFF353005B3E8E /* HomeViewController+Header.swift */; };
 		9615695727D2241E0000219A /* UIView + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9615695627D2241E0000219A /* UIView + extension.swift */; };
+		9615695B27D227000000219A /* HeaderMovement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9615695A27D227000000219A /* HeaderMovement.swift */; };
 		9619B5E027D034E800590CFE /* SearchResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9619B5DE27D034E800590CFE /* SearchResultTableViewController.swift */; };
 		9619B5ED27D0358900590CFE /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9619B5EB27D0358900590CFE /* SearchResultTableViewCell.swift */; };
 		9619B5EE27D0358900590CFE /* SearchResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9619B5EC27D0358900590CFE /* SearchResultTableViewCell.xib */; };
@@ -64,6 +65,7 @@
 		960FC9F827CFCD3A005B3E8E /* HeaderCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCollectionViewCell.xib; sourceTree = "<group>"; };
 		960FCA0527CFF353005B3E8E /* HomeViewController+Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+Header.swift"; sourceTree = "<group>"; };
 		9615695627D2241E0000219A /* UIView + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + extension.swift"; sourceTree = "<group>"; };
+		9615695A27D227000000219A /* HeaderMovement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderMovement.swift; sourceTree = "<group>"; };
 		9619B5DE27D034E800590CFE /* SearchResultTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewController.swift; sourceTree = "<group>"; };
 		9619B5EB27D0358900590CFE /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
 		9619B5EC27D0358900590CFE /* SearchResultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultTableViewCell.xib; sourceTree = "<group>"; };
@@ -486,6 +488,7 @@
 				967B2FFD27CFFD87000D1D6E /* HeaderCellView.swift */,
 				9619B60427D0464A00590CFE /* SearchCellView.swift */,
 				962FB01E27D11E1D0049F61C /* IDetailsView.swift */,
+				9615695A27D227000000219A /* HeaderMovement.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -636,6 +639,7 @@
 				965F0D3B27CEBA2600C3F646 /* TopGossingMoviesTableViewCell.swift in Sources */,
 				965F0D8127CED18F00C3F646 /* HomeViewModel.swift in Sources */,
 				965F0D4927CEBEB400C3F646 /* ComingSoonCollectionViewCell.swift in Sources */,
+				9615695B27D227000000219A /* HeaderMovement.swift in Sources */,
 				965F0CF927CEB45800C3F646 /* AppDelegate.swift in Sources */,
 				965F0D7A27CED06E00C3F646 /* UIViewController+extensions.swift in Sources */,
 				965F0D2827CEB95900C3F646 /* ComingSoonTableViewCell.swift in Sources */,

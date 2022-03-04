@@ -10,7 +10,4 @@ protocol HeaderCellView
 {
     func configure(itemTrailor: Trailor)
 }
-protocol HeaderMovement
-{
-    func moveToNextCell(index: Int)
-}
+
