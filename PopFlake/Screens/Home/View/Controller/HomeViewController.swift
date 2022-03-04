@@ -75,7 +75,6 @@ class HomeViewController: UIViewController
                 guard let self = self else {return}
                 DispatchQueue.main.async
                 {
-                    print("binding")
                     self.loadingIndicator.stopAnimating()
                     self.homeTableView.isHidden = false
                     self.homeViewModel.configureHeaderMovement(cell: self)
