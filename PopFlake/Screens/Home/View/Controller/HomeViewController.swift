@@ -41,12 +41,6 @@ class HomeViewController: UIViewController
     {
         homeViewModel.getData()
         refreshController.endRefreshing()
-        DispatchQueue.main.async
-        {
-            [weak self] in
-            guard let self = self else {return}
-            self.homeTableView.reloadData()
-        }
         
     }
     func UIManagement()
@@ -83,7 +77,6 @@ class HomeViewController: UIViewController
                     self.loadingIndicator.stopAnimating()
                     self.homeTableView.isHidden = false
                     self.homeViewModel.configureHeaderMovement(cell: self)
-                    self.homeTableView.reloadData()
                     self.headerCollectionView.reloadData()
                 }
             }
