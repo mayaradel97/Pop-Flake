@@ -9,24 +9,19 @@ import Foundation
 class HomeViewModel
 {
     var headers: [Header]
-    var comingSonnItems: [Item]
-    var inTheatersItems: [Item]
-    var topRatedItems: [Item]
-    var topGrossingItems: [Item]
-    var itemsTrailors: [Trailor]
+    var comingSonnItems: [Item]!
+    var inTheatersItems: [Item]!
+    var topRatedItems: [Item]!
+    var topGrossingItems: [Item]!
+    var itemsTrailors: [Trailor]!
     var networkLayer: NetworkLayer!
     var bindItemsToView: (()->())!
     var bindFailureToView: (()->())!
     var timer: Timer?
-    var currentHeaderIndex = 0
+    var currentHeaderIndex: Int!
     
     init()
     {
-        comingSonnItems = []
-        inTheatersItems = []
-        topRatedItems = []
-        topGrossingItems = []
-        itemsTrailors = []
         networkLayer = NetworkLayer()
         headers =
             [
@@ -40,6 +35,12 @@ class HomeViewModel
     }
     func getData()
     {
+        comingSonnItems = []
+        inTheatersItems = []
+        topRatedItems = []
+        topGrossingItems = []
+        itemsTrailors = []
+        currentHeaderIndex = 0
         self.startTimer()
         self.getComingSoonItems()
         self.getInTheatersItems()
