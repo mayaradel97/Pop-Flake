@@ -19,7 +19,14 @@ class InTheatersTableViewCell: UITableViewCell,ItemTableViewCell
     {
         self.homeViewModel = homeViewModel
         self.items = items
-        self.inTheatersCollectionView.reloadData()
+        DispatchQueue.main.async
+        {
+            [weak self] in
+            guard let self = self else {return}
+            self.inTheatersCollectionView.reloadData()
+            self.inTheatersCollectionView.scrollRectToVisible(CGRect.zero, animated: false)
+        }
+
     }
     
     func setUpCell()

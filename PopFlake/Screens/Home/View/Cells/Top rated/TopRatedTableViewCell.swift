@@ -17,7 +17,14 @@ class TopRatedTableViewCell: UITableViewCell,ItemTableViewCell
     {
         self.homeViewModel = homeViewModel
         self.items = items
-        topRatedCollectionView.reloadData()
+        DispatchQueue.main.async
+        {
+            [weak self] in
+            guard let self = self else {return}
+            self.topRatedCollectionView.reloadData()
+            self.topRatedCollectionView.scrollRectToVisible(CGRect.zero, animated: false)
+        }
+
     }
     
     func setUpCell()

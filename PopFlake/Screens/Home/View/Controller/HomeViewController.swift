@@ -41,7 +41,12 @@ class HomeViewController: UIViewController
     {
         homeViewModel.getData()
         refreshController.endRefreshing()
-        homeTableView.reloadData()
+        DispatchQueue.main.async
+        {
+            [weak self] in
+            guard let self = self else {return}
+            self.homeTableView.reloadData()
+        }
         
     }
     func UIManagement()

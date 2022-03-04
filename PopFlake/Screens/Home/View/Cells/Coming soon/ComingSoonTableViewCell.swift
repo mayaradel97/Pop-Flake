@@ -23,7 +23,15 @@ class ComingSoonTableViewCell: UITableViewCell,ItemTableViewCell
     {
         self.items = items
         self.homeViewModel = homeViewModel
-        comingSoonCollectionView.reloadData()
+        DispatchQueue.main.async
+        {
+            [weak self] in
+                guard let self = self else {return}
+            self.comingSoonCollectionView.reloadData()
+            self.comingSoonCollectionView.scrollRectToVisible(CGRect.zero, animated: false)
+        }
+
+       
     }
     func configureCell(cell: ItemCollectionViewCell,indexPath: IndexPath)
     {

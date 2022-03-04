@@ -19,7 +19,12 @@ class TopGossingMoviesTableViewCell: UITableViewCell,ItemTableViewCell
     {
         self.homeViewModel = homeViewModel
         self.items = items
-        topGrossingTableView.reloadData()
+        DispatchQueue.main.async
+        { [weak self] in
+            guard let self = self else {return}
+            self.topGrossingTableView.reloadData()
+            self.topGrossingTableView.scrollRectToVisible(CGRect.zero, animated: false)
+        }
     }
     
     func setUpCell()
