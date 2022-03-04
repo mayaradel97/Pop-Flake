@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TopRatedTableViewCell: UITableViewCell,ItemTableViewCell, IDetailsView
+class TopRatedTableViewCell: UITableViewCell,ItemTableViewCell
 {
     @IBOutlet weak var topRatedCollectionView: UICollectionView!
     let cell = String(describing: InTheatersCollectionViewCell.self)

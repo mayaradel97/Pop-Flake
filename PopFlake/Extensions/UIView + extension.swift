@@ -1,16 +1,12 @@
 //
-//  ImageDataDelegate.swift
+//  UIView + extension.swift
 //  PopFlake
 //
-//  Created by Mayar Adel on 3/2/22.
+//  Created by Mayar Adel on 3/4/22.
 //
 
-import Foundation
-protocol ImageDataDelegate
-{
-    func getImageData(with url: String)-> Data?
-}
-extension ImageDataDelegate
+import UIKit
+extension UIView: IDetailsView
 {
     func getImageData(with url: String)-> Data?
     {
@@ -27,4 +23,6 @@ extension ImageDataDelegate
        }
         return imageData
     }
+
+
 }

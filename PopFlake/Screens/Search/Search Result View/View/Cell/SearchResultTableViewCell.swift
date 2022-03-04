@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SearchResultTableViewCell: UITableViewCell,SearchCellView,ImageDataDelegate
+class SearchResultTableViewCell: UITableViewCell,SearchCellView
 {
    
     

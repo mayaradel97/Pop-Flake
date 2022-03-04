@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HeaderCollectionViewCell: UICollectionViewCell,HeaderCellView,ImageDataDelegate
+class HeaderCollectionViewCell: UICollectionViewCell,HeaderCellView
 {
    
     @IBOutlet weak var descriptionLabel: UILabel!

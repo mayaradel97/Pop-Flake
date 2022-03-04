@@ -7,7 +7,7 @@
 
 import UIKit
 
-class InTheatersTableViewCell: UITableViewCell,ItemTableViewCell,IDetailsView
+class InTheatersTableViewCell: UITableViewCell,ItemTableViewCell
 {
     
     let cell = String(describing: InTheatersCollectionViewCell.self)

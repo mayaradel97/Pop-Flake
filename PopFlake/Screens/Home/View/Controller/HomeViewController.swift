@@ -122,20 +122,16 @@ extension HomeViewController: UITableViewDataSource
         switch indexPath.section
         {
         case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCellConstant.ComingSoonTableViewCell.rawValue, for: indexPath) as! ComingSoonTableViewCell
-            homeViewModel.configureCell(cell: cell)
+            let cell = self.getCell(of: ComingSoonTableViewCell.self, indexPath: indexPath, tableView: tableView, identifier: HomeTableViewCellConstant.ComingSoonTableViewCell.rawValue)
             return cell
         case 1:
-            let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCellConstant.InTheatersTableViewCell.rawValue, for: indexPath) as! InTheatersTableViewCell
-            homeViewModel.configureCell(cell: cell)
+            let cell = self.getCell(of: InTheatersTableViewCell.self, indexPath: indexPath, tableView: tableView, identifier: HomeTableViewCellConstant.InTheatersTableViewCell.rawValue)
             return cell
         case 2:
-            let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCellConstant.TopRatedTableViewCell.rawValue, for: indexPath) as! TopRatedTableViewCell
-            homeViewModel.configureCell(cell: cell)
+            let cell = self.getCell(of: TopRatedTableViewCell.self, indexPath: indexPath, tableView: tableView, identifier: HomeTableViewCellConstant.TopRatedTableViewCell.rawValue)
             return cell
         case 3:
-            let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCellConstant.TopGossingMoviesTableViewCell.rawValue, for: indexPath) as! TopGossingMoviesTableViewCell
-            homeViewModel.configureCell(cell: cell)
+            let cell = self.getCell(of: TopGossingMoviesTableViewCell.self, indexPath: indexPath, tableView: tableView, identifier: HomeTableViewCellConstant.TopGossingMoviesTableViewCell.rawValue)
             return cell
             
         default:
@@ -143,6 +139,12 @@ extension HomeViewController: UITableViewDataSource
         }
         
         
+    }
+    func getCell<T: ItemTableViewCell>(of type: T.Type,indexPath: IndexPath, tableView: UITableView , identifier: String) -> UITableViewCell
+    {
+        let tableViewCell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! T
+        homeViewModel.configureCell(cell: tableViewCell)
+        return tableViewCell as! UITableViewCell
     }
 }
 //MARK: - UITableViewDelegate

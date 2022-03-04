@@ -6,7 +6,7 @@
 //
 
 import UIKit
-class ComingSoonCollectionViewCell: UICollectionViewCell,ItemCollectionViewCell,ImageDataDelegate
+class ComingSoonCollectionViewCell: UICollectionViewCell,ItemCollectionViewCell
 {
     @IBOutlet weak var itemYear: UILabel!
     @IBOutlet weak var itemTitle: UILabel!

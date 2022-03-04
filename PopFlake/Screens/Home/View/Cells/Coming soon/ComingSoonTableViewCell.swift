@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ComingSoonTableViewCell: UITableViewCell,ItemTableViewCell,IDetailsView
+class ComingSoonTableViewCell: UITableViewCell,ItemTableViewCell
 {
     @IBOutlet weak var comingSoonCollectionView: UICollectionView!
     let cell = String(describing: ComingSoonCollectionViewCell.self)

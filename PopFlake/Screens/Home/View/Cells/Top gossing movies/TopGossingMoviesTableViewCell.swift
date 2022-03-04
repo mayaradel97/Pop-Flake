@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TopGossingMoviesTableViewCell: UITableViewCell,ItemTableViewCell, IDetailsView
+class TopGossingMoviesTableViewCell: UITableViewCell,ItemTableViewCell
 {
     
     

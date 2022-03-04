@@ -7,7 +7,7 @@
 
 import UIKit
 
-class InTheatersCollectionViewCell: UICollectionViewCell,ItemCollectionViewCell,ImageDataDelegate
+class InTheatersCollectionViewCell: UICollectionViewCell,ItemCollectionViewCell
 {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!

@@ -17,6 +17,3 @@ extension UIViewController: IDetailsView
     }
    
 }
-
-
-
