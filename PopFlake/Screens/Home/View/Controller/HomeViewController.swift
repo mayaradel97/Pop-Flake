@@ -70,14 +70,17 @@ class HomeViewController: UIViewController
     {
         homeViewModel.bindItemsToView =
             {
+               
                 [weak self] in
                 guard let self = self else {return}
                 DispatchQueue.main.async
                 {
+                    print("binding")
                     self.loadingIndicator.stopAnimating()
                     self.homeTableView.isHidden = false
                     self.homeViewModel.configureHeaderMovement(cell: self)
                     self.headerCollectionView.reloadData()
+                    self.homeTableView.reloadData()
                 }
             }
     }
