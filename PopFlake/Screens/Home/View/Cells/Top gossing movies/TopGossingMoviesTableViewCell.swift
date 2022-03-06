@@ -9,8 +9,6 @@ import UIKit
 
 class TopGossingMoviesTableViewCell: UITableViewCell,ITableViewCell
 {
-    
-    
     @IBOutlet weak var topGrossingTableView: UITableView!
     let cell = String(describing: TopGrossingInnerCell.self)
     var items: [Item] = []
@@ -20,7 +18,7 @@ class TopGossingMoviesTableViewCell: UITableViewCell,ITableViewCell
       
         self.setUpCell()
     }
-    func configure(items: [Item],hideStarIcon: Bool,homeViewModel: HomeViewModel, itemType :String)
+    func configure(items: [Item],homeViewModel: HomeViewModel)
     {
         self.items = items
         self.homeViewModel = homeViewModel
@@ -40,10 +38,6 @@ class TopGossingMoviesTableViewCell: UITableViewCell,ITableViewCell
         topGrossingTableView.delegate = self
     }
     
-//    func configureCell(cell: ItemCollectionViewCell, indexPath: IndexPath)
-//    {
-//        cell.configure(item: items[indexPath.row])
-//    }
 }
 //MARK: - UITableViewDataSource
 extension TopGossingMoviesTableViewCell: UITableViewDataSource
@@ -59,7 +53,8 @@ extension TopGossingMoviesTableViewCell: UITableViewDataSource
         topGrossingInnerCell.configure(item: items[indexPath.item], hideStarIcon: false)
         return topGrossingInnerCell
     }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+    {
         80
     }
     

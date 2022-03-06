@@ -8,6 +8,6 @@
 import Foundation
 protocol ITableViewCell
 {
-    func configure(items: [Item],hideStarIcon: Bool ,homeViewModel:HomeViewModel,itemType: String)
+    func configure(items: [Item] ,homeViewModel:HomeViewModel)
     func setUpCell()
 }

@@ -105,7 +105,7 @@ class HomeViewModel
     }
     func getMoviesTrailors()
     {
-        guard let randomItem = getRandomItem(items: inTheatersItems)
+        guard let randomItem = getRandomItem(items: topRatedItems)
         else {return}
         networkLayer.getResponse(of: Trailor.self, url: API.getTrailorMoviesURL(with:randomItem.id))
         { [weak self](item) in
@@ -127,7 +127,7 @@ class HomeViewModel
     }
     func getAllTrailors()
     {
-        for _ in self.inTheatersItems
+        for _ in 0...10
         {
             self.getMoviesTrailors()
         }
@@ -141,8 +141,6 @@ class HomeViewModel
             {
                 self.inTheatersItems += items.items
                 self.bindItemsToView()
-                self.getAllTrailors()
-                
             }
             else
             {
@@ -162,6 +160,7 @@ class HomeViewModel
             {
                 self.topRatedItems += items.items
                 self.bindItemsToView()
+                self.getAllTrailors()
             }
             else
             {

@@ -16,16 +16,16 @@ class ItemTableViewCell: UITableViewCell,ITableViewCell
     var hideStarIcon: Bool!
     var itemType: String!
     @IBOutlet weak var inTheatersCollectionView: UICollectionView!
+    
     override func awakeFromNib()
     {
+        hideStarIcon = false
         setUpCell()
     }
-    func configure(items: [Item],hideStarIcon: Bool,homeViewModel: HomeViewModel,itemType: String)
+    func configure(items: [Item],homeViewModel: HomeViewModel)
     {
-        self.hideStarIcon = hideStarIcon
         self.items = items
         self.homeViewModel = homeViewModel
-        self.itemType = itemType
         DispatchQueue.main.async
         {
             [weak self] in

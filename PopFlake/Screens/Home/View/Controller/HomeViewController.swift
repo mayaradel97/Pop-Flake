@@ -122,21 +122,12 @@ extension HomeViewController: UITableViewDataSource
         switch indexPath.section
         {
         case 0,1,2:
-            
-            let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCellConstant.ItemTableViewCell.rawValue) as!      ItemTableViewCell
-            switch indexPath.section
-            {
-            case 0:
-                cell.configure(items: homeViewModel.comingSonnItems, hideStarIcon: true, homeViewModel: homeViewModel, itemType: "comingSonnItems")
-            case 1:cell.configure(items: homeViewModel.inTheatersItems, hideStarIcon: false, homeViewModel: homeViewModel, itemType: "inTheatersItems")
-            case 2:cell.configure(items: homeViewModel.topRatedItems, hideStarIcon: false, homeViewModel: homeViewModel, itemType: "topRatedItems")
-            default:
-                break
-            }
-            return cell
+            let itemCell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCellConstant.ItemTableViewCell.rawValue) as!      ItemTableViewCell
+            self.getCells(indexPath: indexPath, cell: itemCell)
+            return itemCell
         case 3:
             let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCellConstant.TopGossingMoviesTableViewCell.rawValue) as! TopGossingMoviesTableViewCell
-            cell.configure(items: homeViewModel.topGrossingItems, hideStarIcon: false, homeViewModel: homeViewModel, itemType: "")
+            cell.configure(items: homeViewModel.topGrossingItems, homeViewModel: homeViewModel)
             return cell
             
         default:
@@ -145,12 +136,26 @@ extension HomeViewController: UITableViewDataSource
         
         
     }
-//    func getCell<T: ItemTableViewCell>(of type: T.Type,indexPath: IndexPath, tableView: UITableView , identifier: String) -> UITableViewCell
-//    {
-//        let tableViewCell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! T
-//        homeViewModel.configureCell(cell: tableViewCell)
-//        return tableViewCell as! UITableViewCell
-//    }
+    func getCells(indexPath: IndexPath,cell: ItemTableViewCell)
+   {
+    switch indexPath.section
+    {
+    case 0:
+        cell.configure(items: homeViewModel.comingSonnItems, homeViewModel: homeViewModel)
+        cell.hideStarIcon = true
+        cell.itemType = "comingSonnItems"
+    case 1:
+        cell.configure(items: homeViewModel.inTheatersItems,homeViewModel: homeViewModel)
+        cell.itemType = "inTheatersItems"
+    case 2:
+        cell.configure(items: homeViewModel.topRatedItems , homeViewModel: homeViewModel)
+        cell.itemType = "topRatedItems"
+    default:
+        break
+    }
+    
+   }
+
 }
 //MARK: - UITableViewDelegate
 extension HomeViewController: UITableViewDelegate
