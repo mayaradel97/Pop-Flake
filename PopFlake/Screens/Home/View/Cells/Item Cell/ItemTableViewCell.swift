@@ -7,18 +7,25 @@
 
 import UIKit
 
-class InTheatersTableViewCell: UITableViewCell,ItemTableViewCell
+class ItemTableViewCell: UITableViewCell,ITableViewCell
 {
     
-    let cell = String(describing: InTheatersCollectionViewCell.self)
+    let cell = String(describing: ItemCollectionViewCell.self)
     var items: [Item] = []
     var homeViewModel: HomeViewModel!
+    var hideStarIcon: Bool!
+    var itemType: String!
     @IBOutlet weak var inTheatersCollectionView: UICollectionView!
-    
-    func configure(items: [Item],homeViewModel: HomeViewModel)
+    override func awakeFromNib()
     {
-        self.homeViewModel = homeViewModel
+        setUpCell()
+    }
+    func configure(items: [Item],hideStarIcon: Bool,homeViewModel: HomeViewModel,itemType: String)
+    {
+        self.hideStarIcon = hideStarIcon
         self.items = items
+        self.homeViewModel = homeViewModel
+        self.itemType = itemType
         DispatchQueue.main.async
         {
             [weak self] in
@@ -35,14 +42,11 @@ class InTheatersTableViewCell: UITableViewCell,ItemTableViewCell
         inTheatersCollectionView.delegate = self
         inTheatersCollectionView.dataSource = self
     }
-    func configureCell(cell: ItemCollectionViewCell, indexPath: IndexPath)
-    {
-        cell.configure(item: items[indexPath.row])
-    }
+
 }
 
 //MARK: - UICollectionViewDataSource
-extension InTheatersTableViewCell: UICollectionViewDataSource
+extension ItemTableViewCell: UICollectionViewDataSource
 {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
@@ -51,21 +55,31 @@ extension InTheatersTableViewCell: UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
-        let inTheatersCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: cell, for: indexPath) as! InTheatersCollectionViewCell
-        self.configureCell(cell: inTheatersCollectionViewCell, indexPath: indexPath)
+        let inTheatersCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: cell, for: indexPath) as! ItemCollectionViewCell
+        inTheatersCollectionViewCell.configure(item: items[indexPath.item], hideStarIcon: self.hideStarIcon)
         return inTheatersCollectionViewCell
     }
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath)
     {
         if indexPath.row == items.count - 1
         {
-            homeViewModel.getInTheatersItems()
+            guard let itemType = itemType
+            else{return}
+            switch itemType
+            {
+            case "comingSonnItems":
+                homeViewModel.getComingSoonItems()
+            case "inTheatersItems":
+                homeViewModel.getInTheatersItems()
+            default:
+                break
+            }
         }
     }
 }
 
 //MARK: - InTheatersTableViewCell
-extension InTheatersTableViewCell: UICollectionViewDelegate
+extension ItemTableViewCell: UICollectionViewDelegate,IDetailsView
 {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
     {
@@ -75,7 +89,7 @@ extension InTheatersTableViewCell: UICollectionViewDelegate
 }
 
 // MARK: UICollectionViewDelegateFlowLayout
-extension InTheatersTableViewCell: UICollectionViewDelegateFlowLayout
+extension ItemTableViewCell: UICollectionViewDelegateFlowLayout
 {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
     {

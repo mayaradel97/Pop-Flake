@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import SDWebImage
 class HeaderCollectionViewCell: UICollectionViewCell,HeaderCellView
 {
    
@@ -25,12 +25,14 @@ class HeaderCollectionViewCell: UICollectionViewCell,HeaderCellView
         videoURL = itemTrailor.link
         titleLabel.text = itemTrailor.title
         descriptionLabel.text = itemTrailor.videoTitle
-        guard let imageVideoData = self.getImageData(with: itemTrailor.thumbnailUrl)
-        else{return}
-        videoImageView.image = UIImage(data: imageVideoData)
-        guard let imagePosterData = self.getImageData(with: itemTrailor.posterImage!)
-        else{return}
-        posterImageView.image = UIImage(data: imagePosterData)
+        if let photoUrl = URL(string: itemTrailor.thumbnailUrl){
+            videoImageView.sd_imageIndicator = SDWebImageActivityIndicator.gray
+            videoImageView.sd_setImage(with: photoUrl, placeholderImage: UIImage(), options: [.progressiveLoad])
+        }
+        if let photoUrl = URL(string: itemTrailor.posterImage!){
+            posterImageView.sd_imageIndicator = SDWebImageActivityIndicator.gray
+            posterImageView.sd_setImage(with: photoUrl, placeholderImage: UIImage(), options: [.progressiveLoad])
+        }
     }
     
     @IBAction func playButtonPressed(_ sender: UIButton)

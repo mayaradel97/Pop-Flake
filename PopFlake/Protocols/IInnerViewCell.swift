@@ -6,8 +6,8 @@
 //
 
 import Foundation
-protocol ItemCollectionViewCell
+protocol IInnerViewCell
 {
-    func configure(item: Item)
+    func configure(item: Item,hideStarIcon: Bool)
 }
 

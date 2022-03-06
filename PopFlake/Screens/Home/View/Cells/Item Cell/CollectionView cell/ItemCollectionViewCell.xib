@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="InTheatersCollectionViewCell" id="gTV-IL-0wX" customClass="InTheatersCollectionViewCell" customModule="PopFlake" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ItemCollectionViewCell" id="gTV-IL-0wX" customClass="ItemCollectionViewCell" customModule="PopFlake" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="279" height="392"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -36,7 +36,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bPi-o0-Gbe">
-                        <rect key="frame" x="41" y="321.5" width="222" height="21"/>
+                        <rect key="frame" x="40" y="321.5" width="223" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -46,24 +46,25 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="bPi-o0-Gbe" secondAttribute="trailing" constant="16" id="3sN-wq-dxH"/>
                 <constraint firstItem="4oe-oT-4CT" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.8" id="EcS-nd-3Gg"/>
-                <constraint firstItem="hLg-AN-ClU" firstAttribute="leading" secondItem="Rjy-hr-N0n" secondAttribute="leading" id="Eze-Jg-y8Y"/>
+                <constraint firstItem="hLg-AN-ClU" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="Eze-Jg-y8Y"/>
                 <constraint firstAttribute="trailing" secondItem="hLg-AN-ClU" secondAttribute="trailing" constant="16" id="POg-Oe-zpS"/>
                 <constraint firstItem="4oe-oT-4CT" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="VLX-6T-Kje"/>
                 <constraint firstAttribute="trailing" secondItem="4oe-oT-4CT" secondAttribute="trailing" id="ZlW-hz-lom"/>
                 <constraint firstItem="Rjy-hr-N0n" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="aTY-OK-PM6"/>
+                <constraint firstItem="bPi-o0-Gbe" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="40" id="cEP-XM-fd2"/>
                 <constraint firstItem="Rjy-hr-N0n" firstAttribute="top" secondItem="4oe-oT-4CT" secondAttribute="bottom" constant="8" id="fix-wW-HoI"/>
                 <constraint firstItem="4oe-oT-4CT" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="gtg-zs-Li6"/>
                 <constraint firstItem="hLg-AN-ClU" firstAttribute="top" secondItem="Rjy-hr-N0n" secondAttribute="bottom" constant="8" id="hEY-Sd-3UD"/>
-                <constraint firstItem="bPi-o0-Gbe" firstAttribute="top" secondItem="4oe-oT-4CT" secondAttribute="bottom" constant="8" id="piV-hi-6OY"/>
-                <constraint firstItem="bPi-o0-Gbe" firstAttribute="leading" secondItem="Rjy-hr-N0n" secondAttribute="trailing" constant="3" id="pjI-6M-ykd"/>
                 <constraint firstAttribute="bottom" secondItem="hLg-AN-ClU" secondAttribute="bottom" constant="8" id="pls-fa-fzE"/>
+                <constraint firstItem="bPi-o0-Gbe" firstAttribute="top" secondItem="4oe-oT-4CT" secondAttribute="bottom" constant="8" id="sTM-PP-el7"/>
+                <constraint firstAttribute="trailing" secondItem="bPi-o0-Gbe" secondAttribute="trailing" constant="16" id="z7j-XC-Ezt"/>
             </constraints>
             <size key="customSize" width="279" height="392"/>
             <connections>
                 <outlet property="itemImageView" destination="4oe-oT-4CT" id="Vf2-cf-Pom"/>
                 <outlet property="ratingLabel" destination="bPi-o0-Gbe" id="NsY-K4-0x5"/>
+                <outlet property="starIcon" destination="Rjy-hr-N0n" id="2vi-iM-zk5"/>
                 <outlet property="titleLabel" destination="hLg-AN-ClU" id="f1N-4b-ORM"/>
             </connections>
             <point key="canvasLocation" x="-89.130434782608702" y="97.098214285714278"/>

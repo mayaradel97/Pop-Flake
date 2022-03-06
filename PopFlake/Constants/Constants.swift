@@ -8,8 +8,6 @@
 import Foundation
 enum HomeTableViewCellConstant: String,CaseIterable
 {
+    case ItemTableViewCell
     case TopGossingMoviesTableViewCell
-    case TopRatedTableViewCell
-    case InTheatersTableViewCell
-    case ComingSoonTableViewCell
 }

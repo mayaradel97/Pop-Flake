@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TopGossingMoviesTableViewCell: UITableViewCell,ItemTableViewCell
+class TopGossingMoviesTableViewCell: UITableViewCell,ITableViewCell
 {
     
     
@@ -15,10 +15,15 @@ class TopGossingMoviesTableViewCell: UITableViewCell,ItemTableViewCell
     let cell = String(describing: TopGrossingInnerCell.self)
     var items: [Item] = []
     var homeViewModel: HomeViewModel!
-    func configure(items: [Item],homeViewModel: HomeViewModel)
+    override  func awakeFromNib()
     {
-        self.homeViewModel = homeViewModel
+      
+        self.setUpCell()
+    }
+    func configure(items: [Item],hideStarIcon: Bool,homeViewModel: HomeViewModel, itemType :String)
+    {
         self.items = items
+        self.homeViewModel = homeViewModel
         DispatchQueue.main.async
         { [weak self] in
             guard let self = self else {return}
@@ -35,10 +40,10 @@ class TopGossingMoviesTableViewCell: UITableViewCell,ItemTableViewCell
         topGrossingTableView.delegate = self
     }
     
-    func configureCell(cell: ItemCollectionViewCell, indexPath: IndexPath)
-    {
-        cell.configure(item: items[indexPath.row])
-    }
+//    func configureCell(cell: ItemCollectionViewCell, indexPath: IndexPath)
+//    {
+//        cell.configure(item: items[indexPath.row])
+//    }
 }
 //MARK: - UITableViewDataSource
 extension TopGossingMoviesTableViewCell: UITableViewDataSource
@@ -51,7 +56,7 @@ extension TopGossingMoviesTableViewCell: UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let topGrossingInnerCell = tableView.dequeueReusableCell(withIdentifier: cell, for: indexPath) as! TopGrossingInnerCell
-        self.configureCell(cell: topGrossingInnerCell, indexPath: indexPath)
+        topGrossingInnerCell.configure(item: items[indexPath.item], hideStarIcon: false)
         return topGrossingInnerCell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -68,7 +73,7 @@ extension TopGossingMoviesTableViewCell: UITableViewDataSource
     }
 }
 //MARK: - UITableViewDelegate
-extension TopGossingMoviesTableViewCell: UITableViewDelegate
+extension TopGossingMoviesTableViewCell: UITableViewDelegate,IDetailsView
 {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {

@@ -189,22 +189,5 @@ class HomeViewModel
             
         }
     }
-    func configureCell(cell: ItemTableViewCell)
-    {
-        cell.setUpCell()
-        switch cell
-        {
-        case is ComingSoonTableViewCell:
-            cell.configure(items: comingSonnItems, homeViewModel: self)
-        case is InTheatersTableViewCell:
-            cell.configure(items: inTheatersItems, homeViewModel: self)
-        case is TopRatedTableViewCell:
-            cell.configure(items: topRatedItems,homeViewModel: self)
-        case is TopGossingMoviesTableViewCell:
-            cell.configure(items: topGrossingItems,homeViewModel: self)
-        default:
-            print("other")
-        }
-        
-    }
+
 }
