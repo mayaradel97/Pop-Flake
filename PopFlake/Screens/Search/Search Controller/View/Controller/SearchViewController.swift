@@ -80,7 +80,8 @@ class SearchViewController: UIViewController
     }
     func showSearchController()
     {
-        
+        //remove space between searchbar and result controller
+        self.extendedLayoutIncludesOpaqueBars = true
         searchResultTableView = (storyboard!.instantiateViewController(withIdentifier: String(describing: SearchResultTableViewController.self)) as! SearchResultTableViewController)
         searchController = UISearchController(searchResultsController: searchResultTableView )
         //change cancel button color
